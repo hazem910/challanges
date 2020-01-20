@@ -5,7 +5,7 @@
  *  Author: hazem
  */ 
 #include "pushButton.h"
-/*implementation of pushbuttoninit */
+/*implementation of pushbuttons initialization */
 void pushButtonInit(En_buttonId_t en_butotn_id){
 	
 	switch(en_butotn_id){

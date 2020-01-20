@@ -8,9 +8,9 @@
 #ifndef SEVENSEG_H_
 #define SEVENSEG_H_
 
-#include "gpio.h"
-#include "sevenSegConfig.h"
 
+#include "sevenSegConfig.h"
+#include "gpio.h"
 
 typedef enum En_SevenSegId_t{
 	SEG_0,

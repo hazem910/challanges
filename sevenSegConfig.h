@@ -32,15 +32,13 @@
  */
 #define SEG_EN1_GPIO		(GPIOD)
 #define SEG_EN2_GPIO		(GPIOD)
-#define SEG_EN3_GPIO		(GPIOD)
-#define SEG_EN4_GPIO		(GPIOD)
+
 
 /*
  * Define The Seven Segment Enable pin BIT
  */
 #define SEG_EN1_BIT			(BIT2)
 #define SEG_EN2_BIT			(BIT3)
-#define SEG_EN3_BIT			(BIT6)
-#define SEG_EN4_BIT			(BIT7)
+
 
 #endif /* SEVENSEG_BCD_CFG_H_ */
