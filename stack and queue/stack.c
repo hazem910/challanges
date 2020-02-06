@@ -1,4 +1,5 @@
-#include "stach.h"
+#include "stack.h"
+
 
 /**************************************************************************
 function to create a stack of given capacity. It initializes size of stack
@@ -20,10 +21,14 @@ return  : void
 
 
 void push(ST_stackInfo *info, sint32_t data){
+    if(isFull(info)==full){
+        printf("the stack is full\n");
+    }
+    else{
   info->data[++info->stack_pointer] = data;
-    printf("%d pushed to stack\n", data);
+    printf("%d pushed to stack\n", info->data[info->stack_pointer]);
 }
-
+}
 /**************************************************************************
 Function to remove an item from stack.  It decreases stack_pointer by 1
 parameter : pointer to stack
@@ -31,10 +36,14 @@ return  : last item in the stack
 *****************************************************************************/
 
 sint32_t pop(ST_stackInfo *info){
-
-
-return info->data[info->stack_pointer--];
-
+    sint32_t ret=0;
+if(isEmpty(info)==empty){
+    printf("the stack is empty \n");
+}else{
+printf("%d pop from stack \n",info->data[info->stack_pointer]);
+ret=info->data[info->stack_pointer--];
+}
+return ret;
 }
 
 /**************************************************************************
@@ -69,4 +78,23 @@ if(info->stack_pointer==init_stack_pointer){
 
 return ret;
 }
+
+/**************************************************************************
+Function to return the top from stack without removing it
+parameter : pointer to stack
+return   : top of stack sint32_t
+*****************************************************************************/
+
+sint32_t peek(ST_stackInfo* info)
+{ sint32_t ret=0;
+    if (isEmpty(info)){
+        printf("the stack is empty \n");
+        ret= -1;
+        }
+        else{
+    ret=info->data[info->stack_pointer];
+        }
+    return ret;
+}
+
 
