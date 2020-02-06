@@ -86,10 +86,9 @@ return   : top of stack sint32_t
 *****************************************************************************/
 
 sint32_t peek(ST_stackInfo* info)
-{ sint32_t ret=0;
+{ sint32_t ret=empty;
     if (isEmpty(info)){
         printf("the stack is empty \n");
-        ret= -1;
         }
         else{
     ret=info->data[info->stack_pointer];
