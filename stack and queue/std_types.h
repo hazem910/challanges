@@ -14,6 +14,10 @@
 /************************************************************************/
 
 #define NULL	((void *)0)
+#define empty   1
+#define notempty 0
+#define full  0
+#define notfull 1
 
 typedef unsigned char uint8_t;
 typedef unsigned int uint16_t;
