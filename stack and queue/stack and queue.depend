@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1581004128 source:f:\stack implementation\stack and queue\main.c
+	<stdio.h>
+	<stdlib.h>
+	"stach.h"
+
+1581003355 f:\stack implementation\stack and queue\stach.h
+	"std_types.h"
+
+1579275111 f:\stack implementation\stack and queue\std_types.h
+
+1581003463 source:f:\stack implementation\stack and queue\stack.c
+	"stach.h"
+
