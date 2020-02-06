@@ -36,7 +36,7 @@ return  : last item in the stack
 *****************************************************************************/
 
 sint32_t pop(ST_stackInfo *info){
-    sint32_t ret=0;
+    sint32_t ret=empty;
 if(isEmpty(info)==empty){
     printf("the stack is empty \n");
 }else{
@@ -55,7 +55,7 @@ return   : unsigned char 0=(not full) ,1=(full)
 
 uint8_t isFull(ST_stackInfo* info){
 uint8_t ret=notfull;
-if(info->stack_pointer==(info->Size-1))
+if(info->stack_pointer==(info->Size-full))
 {
 
     ret=full;
