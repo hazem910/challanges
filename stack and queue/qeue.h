@@ -1,6 +1,15 @@
+/*
+ * queue.h
+ *
+ *  Created on: feb 6, 2020
+ *      Author: hazem ebrahim
+ */
+
+
+
 #include "std_types.h"
 
-/* A structure to represent a queue */
+
 typedef struct Queue
 {
      uint16_t Front, rear, Size;
@@ -13,3 +22,5 @@ typedef struct Queue
 	sint32_t dequeue(ST_queueInfo *info);
     uint8_t queueisFull(ST_queueInfo *info);
     uint8_t queueisEmpty(ST_queueInfo *info);
+    sint32_t Front(ST_queueInfo *info);
+

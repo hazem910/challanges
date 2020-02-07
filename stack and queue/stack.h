@@ -1,8 +1,12 @@
+/*
+ * sack.h
+ *
+ *  Created on: feb 6, 2020
+ *      Author: hazem ebrahim
+ */
 #ifndef stack_H__
 #define  stack_H__
 #include "std_types.h"
-#include "stdio.h"
-#include "stdlib.h"
 #define init_stack_pointer -1
 
 typedef struct Stack {
@@ -25,4 +29,4 @@ sint32_t peek(ST_stackInfo* info);
 
 
 
-#endif // stack_H__
+#endif

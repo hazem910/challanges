@@ -1,4 +1,10 @@
 
+/*
+ * check_balnced.c
+ *
+ *  Created on: feb 6, 2020
+ *      Author: hazem ebrahim
+ */
 #include "check_balanced.h"
 uint8_t matching_brackets(char l,char r){
     uint8_t ret=notmatched;

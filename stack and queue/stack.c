@@ -1,3 +1,11 @@
+
+/*
+ * stack.c
+ *
+ *  Created on: feb 6, 2020
+ *      Author: hazem ebrahim
+ */
+
 #include "stack.h"
 
 

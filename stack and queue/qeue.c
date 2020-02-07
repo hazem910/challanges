@@ -1,3 +1,10 @@
+
+/*
+ * queue.c
+ *
+ *  Created on: feb 6, 2020
+ *      Author: hazem ebrahim
+ */
 #include "qeue.h"
 
 /**************************************************************************
@@ -73,7 +80,7 @@ return  : first item enqueued sint32
 sint32_t dequeue(ST_queueInfo *info){
     sint32_t ret=empty;
 if(queueisEmpty(info)==empty){
-            printf("the queue is empty ");
+           printf("the queue is empty ");
 
 }
 else{
@@ -87,4 +94,19 @@ return ret;
 }
 
 
+/**************************************************************************
+Function to peak a front item from Queue.
+parameter : pointer to Queue
+return  : front element of queue
+*****************************************************************************/
+
+
+
+sint32_t front(ST_queueInfo *info)
+{
+    if (isEmpty(&info))
+        {
+        }
+    return info->Arr[info->Front];
+}
 
