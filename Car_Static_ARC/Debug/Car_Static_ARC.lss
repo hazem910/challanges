@@ -1,0 +1,3262 @@
+
+Car_Static_ARC.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000f48  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000001c  00800060  00000f48  00000fdc  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          0000001c  0080007c  0080007c  00000ff8  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000ff8  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001028  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 000001f8  00000000  00000000  00001064  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000020ca  00000000  00000000  0000125c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000df6  00000000  00000000  00003326  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000017b1  00000000  00000000  0000411c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000428  00000000  00000000  000058d0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00004193  00000000  00000000  00005cf8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00001c33  00000000  00000000  00009e8b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000001d8  00000000  00000000  0000babe  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_macro  00001760  00000000  00000000  0000bc96  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	30 c0       	rjmp	.+96     	; 0x62 <__ctors_end>
+   2:	00 00       	nop
+   4:	49 c0       	rjmp	.+146    	; 0x98 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	47 c0       	rjmp	.+142    	; 0x98 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	c8 c2       	rjmp	.+1424   	; 0x59e <__vector_3>
+   e:	00 00       	nop
+  10:	43 c0       	rjmp	.+134    	; 0x98 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	41 c0       	rjmp	.+130    	; 0x98 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	3f c0       	rjmp	.+126    	; 0x98 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	3d c0       	rjmp	.+122    	; 0x98 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	3b c0       	rjmp	.+118    	; 0x98 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	39 c0       	rjmp	.+114    	; 0x98 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	37 c0       	rjmp	.+110    	; 0x98 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	8e c6       	rjmp	.+3356   	; 0xd4a <__vector_11>
+  2e:	00 00       	nop
+  30:	33 c0       	rjmp	.+102    	; 0x98 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	31 c0       	rjmp	.+98     	; 0x98 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	2f c0       	rjmp	.+94     	; 0x98 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	2d c0       	rjmp	.+90     	; 0x98 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	2b c0       	rjmp	.+86     	; 0x98 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	29 c0       	rjmp	.+82     	; 0x98 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	27 c0       	rjmp	.+78     	; 0x98 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	25 c0       	rjmp	.+74     	; 0x98 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	23 c0       	rjmp	.+70     	; 0x98 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	05 06       	cpc	r0, r21
+  56:	0d 06       	cpc	r0, r29
+  58:	15 06       	cpc	r1, r21
+  5a:	1d 06       	cpc	r1, r29
+  5c:	25 06       	cpc	r2, r21
+  5e:	2d 06       	cpc	r2, r29
+  60:	35 06       	cpc	r3, r21
+
+00000062 <__ctors_end>:
+  62:	11 24       	eor	r1, r1
+  64:	1f be       	out	0x3f, r1	; 63
+  66:	cf e5       	ldi	r28, 0x5F	; 95
+  68:	d8 e0       	ldi	r29, 0x08	; 8
+  6a:	de bf       	out	0x3e, r29	; 62
+  6c:	cd bf       	out	0x3d, r28	; 61
+
+0000006e <__do_copy_data>:
+  6e:	10 e0       	ldi	r17, 0x00	; 0
+  70:	a0 e6       	ldi	r26, 0x60	; 96
+  72:	b0 e0       	ldi	r27, 0x00	; 0
+  74:	e8 e4       	ldi	r30, 0x48	; 72
+  76:	ff e0       	ldi	r31, 0x0F	; 15
+  78:	02 c0       	rjmp	.+4      	; 0x7e <__do_copy_data+0x10>
+  7a:	05 90       	lpm	r0, Z+
+  7c:	0d 92       	st	X+, r0
+  7e:	ac 37       	cpi	r26, 0x7C	; 124
+  80:	b1 07       	cpc	r27, r17
+  82:	d9 f7       	brne	.-10     	; 0x7a <__do_copy_data+0xc>
+
+00000084 <__do_clear_bss>:
+  84:	20 e0       	ldi	r18, 0x00	; 0
+  86:	ac e7       	ldi	r26, 0x7C	; 124
+  88:	b0 e0       	ldi	r27, 0x00	; 0
+  8a:	01 c0       	rjmp	.+2      	; 0x8e <.do_clear_bss_start>
+
+0000008c <.do_clear_bss_loop>:
+  8c:	1d 92       	st	X+, r1
+
+0000008e <.do_clear_bss_start>:
+  8e:	a8 39       	cpi	r26, 0x98	; 152
+  90:	b2 07       	cpc	r27, r18
+  92:	e1 f7       	brne	.-8      	; 0x8c <.do_clear_bss_loop>
+  94:	02 d2       	rcall	.+1028   	; 0x49a <main>
+  96:	56 c7       	rjmp	.+3756   	; 0xf44 <_exit>
+
+00000098 <__bad_interrupt>:
+  98:	b3 cf       	rjmp	.-154    	; 0x0 <__vectors>
+
+0000009a <Car_SM_Init>:
+ * -------------- #E_Nok->function operation faild, error exists
+ * Description--: Initiate the car state machine with state"forward at speed 80%",
+ * -------------- And initiate steering and ultrasonic functions
+*/
+ERROR_STATUS Car_SM_Init(void)
+{
+  9a:	cf 93       	push	r28
+ERROR_STATUS ERROR=E_OK;
+
+if(Us_Init()!=E_OK)
+  9c:	7b d6       	rcall	.+3318   	; 0xd94 <Us_Init>
+  9e:	c8 2f       	mov	r28, r24
+ERROR=E_NOK;
+Steering_Init();
+  a0:	9e d1       	rcall	.+828    	; 0x3de <Steering_Init>
+  a2:	81 e0       	ldi	r24, 0x01	; 1
+
+
+return ERROR;
+  a4:	c1 11       	cpse	r28, r1
+  a6:	01 c0       	rjmp	.+2      	; 0xaa <Car_SM_Init+0x10>
+  a8:	80 e0       	ldi	r24, 0x00	; 0
+  aa:	cf 91       	pop	r28
+}
+  ac:	08 95       	ret
+
+000000ae <Car_SM_Update>:
+  ae:	cf 93       	push	r28
+ * -------------- #E_Nok->function operation faild, error exists
+ * Description--: changes car state according to the ultrasonic input
+ * -------------- And represents the motors output for each state
+*/
+ERROR_STATUS Car_SM_Update(void)
+{
+  b0:	df 93       	push	r29
+  b2:	00 d0       	rcall	.+0      	; 0xb4 <Car_SM_Update+0x6>
+  b4:	cd b7       	in	r28, 0x3d	; 61
+  b6:	de b7       	in	r29, 0x3e	; 62
+ERROR_STATUS ERROR=E_OK;
+Us_Trigger();
+  b8:	96 d6       	rcall	.+3372   	; 0xde6 <Us_Trigger>
+uint16_t distance=0;
+  ba:	1a 82       	std	Y+2, r1	; 0x02
+  bc:	19 82       	std	Y+1, r1	; 0x01
+Us_GetDistance(&distance);
+  be:	ce 01       	movw	r24, r28
+  c0:	01 96       	adiw	r24, 0x01	; 1
+  c2:	b2 d6       	rcall	.+3428   	; 0xe28 <Us_GetDistance>
+if(distance>=40)
+  c4:	89 81       	ldd	r24, Y+1	; 0x01
+  c6:	9a 81       	ldd	r25, Y+2	; 0x02
+  c8:	88 32       	cpi	r24, 0x28	; 40
+  ca:	91 05       	cpc	r25, r1
+  cc:	20 f0       	brcs	.+8      	; 0xd6 <Car_SM_Update+0x28>
+{
+Steering_SteerCar(CAR_BACKWARD,20);
+  ce:	64 e1       	ldi	r22, 0x14	; 20
+  d0:	82 e0       	ldi	r24, 0x02	; 2
+  d2:	95 d1       	rcall	.+810    	; 0x3fe <Steering_SteerCar>
+  d4:	0f c0       	rjmp	.+30     	; 0xf4 <Car_SM_Update+0x46>
+}
+else if((distance<40)&&(distance>20))
+  d6:	9c 01       	movw	r18, r24
+  d8:	25 51       	subi	r18, 0x15	; 21
+  da:	31 09       	sbc	r19, r1
+  dc:	23 31       	cpi	r18, 0x13	; 19
+  de:	31 05       	cpc	r19, r1
+{
+Steering_SteerCar(CAR_RIGHT,20);
+  e0:	20 f4       	brcc	.+8      	; 0xea <Car_SM_Update+0x3c>
+  e2:	64 e1       	ldi	r22, 0x14	; 20
+  e4:	83 e0       	ldi	r24, 0x03	; 3
+  e6:	8b d1       	rcall	.+790    	; 0x3fe <Steering_SteerCar>
+  e8:	05 c0       	rjmp	.+10     	; 0xf4 <Car_SM_Update+0x46>
+}
+else if(distance<20)
+  ea:	44 97       	sbiw	r24, 0x14	; 20
+{
+Steering_SteerCar(CAR_FORWARD,20);
+  ec:	18 f4       	brcc	.+6      	; 0xf4 <Car_SM_Update+0x46>
+  ee:	64 e1       	ldi	r22, 0x14	; 20
+  f0:	81 e0       	ldi	r24, 0x01	; 1
+  f2:	85 d1       	rcall	.+778    	; 0x3fe <Steering_SteerCar>
+}
+
+return ERROR;
+  f4:	80 e0       	ldi	r24, 0x00	; 0
+  f6:	0f 90       	pop	r0
+  f8:	0f 90       	pop	r0
+  fa:	df 91       	pop	r29
+  fc:	cf 91       	pop	r28
+  fe:	08 95       	ret
+
+00000100 <DIO_init>:
+/*Output: No output*/
+/*Return:Error status*/
+/*Description: This function can set the direction of a full port, a nibble or even one pin.*/
+/******************************************************************************************/
+ERROR_STATUS DIO_init (DIO_Cfg_s *DIO_info)
+{/*ERROR RET VARIBALE*/ 
+ 100:	fc 01       	movw	r30, r24
+   ERROR_STATUS  EROR=E_OK;
+ /*check if the pointer is not null*/  
+   if(DIO_info!=NULL)
+ 102:	89 2b       	or	r24, r25
+ 104:	09 f4       	brne	.+2      	; 0x108 <DIO_init+0x8>
+ 106:	51 c0       	rjmp	.+162    	; 0x1aa <DIO_init+0xaa>
+   {
+ /*choose any PORT*/ 
+      switch(DIO_info->GPIO)
+ 108:	80 81       	ld	r24, Z
+ 10a:	81 30       	cpi	r24, 0x01	; 1
+ 10c:	c1 f0       	breq	.+48     	; 0x13e <DIO_init+0x3e>
+ 10e:	28 f0       	brcs	.+10     	; 0x11a <DIO_init+0x1a>
+ 110:	82 30       	cpi	r24, 0x02	; 2
+ 112:	39 f1       	breq	.+78     	; 0x162 <DIO_init+0x62>
+ 114:	83 30       	cpi	r24, 0x03	; 3
+ 116:	b9 f1       	breq	.+110    	; 0x186 <DIO_init+0x86>
+ 118:	4a c0       	rjmp	.+148    	; 0x1ae <DIO_init+0xae>
+      {
+         case GPIOA:
+               if(DIO_info->dir==OUTPUT)
+ 11a:	82 81       	ldd	r24, Z+2	; 0x02
+ 11c:	8f 3f       	cpi	r24, 0xFF	; 255
+ 11e:	31 f4       	brne	.+12     	; 0x12c <DIO_init+0x2c>
+               PORTA_DIR|=(DIO_info->pins);
+ 120:	9a b3       	in	r25, 0x1a	; 26
+ 122:	81 81       	ldd	r24, Z+1	; 0x01
+ 124:	89 2b       	or	r24, r25
+ 126:	8a bb       	out	0x1a, r24	; 26
+/*Return:Error status*/
+/*Description: This function can set the direction of a full port, a nibble or even one pin.*/
+/******************************************************************************************/
+ERROR_STATUS DIO_init (DIO_Cfg_s *DIO_info)
+{/*ERROR RET VARIBALE*/ 
+   ERROR_STATUS  EROR=E_OK;
+ 128:	80 e0       	ldi	r24, 0x00	; 0
+ 12a:	08 95       	ret
+      switch(DIO_info->GPIO)
+      {
+         case GPIOA:
+               if(DIO_info->dir==OUTPUT)
+               PORTA_DIR|=(DIO_info->pins);
+               else if(DIO_info->dir==INPUT)
+ 12c:	81 11       	cpse	r24, r1
+ 12e:	41 c0       	rjmp	.+130    	; 0x1b2 <DIO_init+0xb2>
+               PORTA_DIR&=~(DIO_info->pins);
+ 130:	9a b3       	in	r25, 0x1a	; 26
+ 132:	81 81       	ldd	r24, Z+1	; 0x01
+ 134:	80 95       	com	r24
+ 136:	89 23       	and	r24, r25
+ 138:	8a bb       	out	0x1a, r24	; 26
+/*Return:Error status*/
+/*Description: This function can set the direction of a full port, a nibble or even one pin.*/
+/******************************************************************************************/
+ERROR_STATUS DIO_init (DIO_Cfg_s *DIO_info)
+{/*ERROR RET VARIBALE*/ 
+   ERROR_STATUS  EROR=E_OK;
+ 13a:	80 e0       	ldi	r24, 0x00	; 0
+ 13c:	08 95       	ret
+               PORTA_DIR&=~(DIO_info->pins);
+               else
+               EROR=E_NOK;
+               break;
+         case GPIOB:
+               if(DIO_info->dir==OUTPUT)
+ 13e:	82 81       	ldd	r24, Z+2	; 0x02
+ 140:	8f 3f       	cpi	r24, 0xFF	; 255
+ 142:	31 f4       	brne	.+12     	; 0x150 <DIO_init+0x50>
+               PORTB_DIR|=(DIO_info->pins);
+ 144:	97 b3       	in	r25, 0x17	; 23
+ 146:	81 81       	ldd	r24, Z+1	; 0x01
+ 148:	89 2b       	or	r24, r25
+ 14a:	87 bb       	out	0x17, r24	; 23
+/*Return:Error status*/
+/*Description: This function can set the direction of a full port, a nibble or even one pin.*/
+/******************************************************************************************/
+ERROR_STATUS DIO_init (DIO_Cfg_s *DIO_info)
+{/*ERROR RET VARIBALE*/ 
+   ERROR_STATUS  EROR=E_OK;
+ 14c:	80 e0       	ldi	r24, 0x00	; 0
+ 14e:	08 95       	ret
+               EROR=E_NOK;
+               break;
+         case GPIOB:
+               if(DIO_info->dir==OUTPUT)
+               PORTB_DIR|=(DIO_info->pins);
+               else if(DIO_info->dir==INPUT)
+ 150:	81 11       	cpse	r24, r1
+ 152:	31 c0       	rjmp	.+98     	; 0x1b6 <DIO_init+0xb6>
+               PORTB_DIR&=~(DIO_info->pins);
+ 154:	97 b3       	in	r25, 0x17	; 23
+ 156:	81 81       	ldd	r24, Z+1	; 0x01
+ 158:	80 95       	com	r24
+ 15a:	89 23       	and	r24, r25
+ 15c:	87 bb       	out	0x17, r24	; 23
+/*Return:Error status*/
+/*Description: This function can set the direction of a full port, a nibble or even one pin.*/
+/******************************************************************************************/
+ERROR_STATUS DIO_init (DIO_Cfg_s *DIO_info)
+{/*ERROR RET VARIBALE*/ 
+   ERROR_STATUS  EROR=E_OK;
+ 15e:	80 e0       	ldi	r24, 0x00	; 0
+ 160:	08 95       	ret
+               PORTB_DIR&=~(DIO_info->pins);
+               else
+               EROR=E_NOK;
+               break;
+         case GPIOC:
+               if(DIO_info->dir==OUTPUT)
+ 162:	82 81       	ldd	r24, Z+2	; 0x02
+ 164:	8f 3f       	cpi	r24, 0xFF	; 255
+ 166:	31 f4       	brne	.+12     	; 0x174 <DIO_init+0x74>
+               PORTC_DIR|=(DIO_info->pins);
+ 168:	94 b3       	in	r25, 0x14	; 20
+ 16a:	81 81       	ldd	r24, Z+1	; 0x01
+ 16c:	89 2b       	or	r24, r25
+ 16e:	84 bb       	out	0x14, r24	; 20
+/*Return:Error status*/
+/*Description: This function can set the direction of a full port, a nibble or even one pin.*/
+/******************************************************************************************/
+ERROR_STATUS DIO_init (DIO_Cfg_s *DIO_info)
+{/*ERROR RET VARIBALE*/ 
+   ERROR_STATUS  EROR=E_OK;
+ 170:	80 e0       	ldi	r24, 0x00	; 0
+ 172:	08 95       	ret
+               EROR=E_NOK;
+               break;
+         case GPIOC:
+               if(DIO_info->dir==OUTPUT)
+               PORTC_DIR|=(DIO_info->pins);
+               else if(DIO_info->dir==INPUT)
+ 174:	81 11       	cpse	r24, r1
+ 176:	21 c0       	rjmp	.+66     	; 0x1ba <DIO_init+0xba>
+               PORTC_DIR&=~(DIO_info->pins);
+ 178:	94 b3       	in	r25, 0x14	; 20
+ 17a:	81 81       	ldd	r24, Z+1	; 0x01
+ 17c:	80 95       	com	r24
+ 17e:	89 23       	and	r24, r25
+ 180:	84 bb       	out	0x14, r24	; 20
+/*Return:Error status*/
+/*Description: This function can set the direction of a full port, a nibble or even one pin.*/
+/******************************************************************************************/
+ERROR_STATUS DIO_init (DIO_Cfg_s *DIO_info)
+{/*ERROR RET VARIBALE*/ 
+   ERROR_STATUS  EROR=E_OK;
+ 182:	80 e0       	ldi	r24, 0x00	; 0
+ 184:	08 95       	ret
+               PORTC_DIR&=~(DIO_info->pins);
+               else
+               EROR=E_NOK;
+               break;
+         case GPIOD:
+               if(DIO_info->dir==OUTPUT)
+ 186:	82 81       	ldd	r24, Z+2	; 0x02
+ 188:	8f 3f       	cpi	r24, 0xFF	; 255
+ 18a:	31 f4       	brne	.+12     	; 0x198 <DIO_init+0x98>
+               PORTD_DIR|=(DIO_info->pins);
+ 18c:	91 b3       	in	r25, 0x11	; 17
+ 18e:	81 81       	ldd	r24, Z+1	; 0x01
+ 190:	89 2b       	or	r24, r25
+ 192:	81 bb       	out	0x11, r24	; 17
+/*Return:Error status*/
+/*Description: This function can set the direction of a full port, a nibble or even one pin.*/
+/******************************************************************************************/
+ERROR_STATUS DIO_init (DIO_Cfg_s *DIO_info)
+{/*ERROR RET VARIBALE*/ 
+   ERROR_STATUS  EROR=E_OK;
+ 194:	80 e0       	ldi	r24, 0x00	; 0
+ 196:	08 95       	ret
+               EROR=E_NOK;
+               break;
+         case GPIOD:
+               if(DIO_info->dir==OUTPUT)
+               PORTD_DIR|=(DIO_info->pins);
+               else if(DIO_info->dir==INPUT)
+ 198:	81 11       	cpse	r24, r1
+ 19a:	11 c0       	rjmp	.+34     	; 0x1be <DIO_init+0xbe>
+               PORTD_DIR&=~(DIO_info->pins);
+ 19c:	91 b3       	in	r25, 0x11	; 17
+ 19e:	81 81       	ldd	r24, Z+1	; 0x01
+ 1a0:	80 95       	com	r24
+ 1a2:	89 23       	and	r24, r25
+ 1a4:	81 bb       	out	0x11, r24	; 17
+/*Return:Error status*/
+/*Description: This function can set the direction of a full port, a nibble or even one pin.*/
+/******************************************************************************************/
+ERROR_STATUS DIO_init (DIO_Cfg_s *DIO_info)
+{/*ERROR RET VARIBALE*/ 
+   ERROR_STATUS  EROR=E_OK;
+ 1a6:	80 e0       	ldi	r24, 0x00	; 0
+ 1a8:	08 95       	ret
+         
+      }   
+   }
+   else
+   {
+      EROR=E_NOK;
+ 1aa:	81 e0       	ldi	r24, 0x01	; 1
+ 1ac:	08 95       	ret
+               PORTD_DIR&=~(DIO_info->pins);
+               else
+               EROR=E_NOK;
+               break;
+         default:
+               EROR=E_NOK;
+ 1ae:	81 e0       	ldi	r24, 0x01	; 1
+ 1b0:	08 95       	ret
+               if(DIO_info->dir==OUTPUT)
+               PORTA_DIR|=(DIO_info->pins);
+               else if(DIO_info->dir==INPUT)
+               PORTA_DIR&=~(DIO_info->pins);
+               else
+               EROR=E_NOK;
+ 1b2:	81 e0       	ldi	r24, 0x01	; 1
+ 1b4:	08 95       	ret
+               if(DIO_info->dir==OUTPUT)
+               PORTB_DIR|=(DIO_info->pins);
+               else if(DIO_info->dir==INPUT)
+               PORTB_DIR&=~(DIO_info->pins);
+               else
+               EROR=E_NOK;
+ 1b6:	81 e0       	ldi	r24, 0x01	; 1
+ 1b8:	08 95       	ret
+               if(DIO_info->dir==OUTPUT)
+               PORTC_DIR|=(DIO_info->pins);
+               else if(DIO_info->dir==INPUT)
+               PORTC_DIR&=~(DIO_info->pins);
+               else
+               EROR=E_NOK;
+ 1ba:	81 e0       	ldi	r24, 0x01	; 1
+ 1bc:	08 95       	ret
+               if(DIO_info->dir==OUTPUT)
+               PORTD_DIR|=(DIO_info->pins);
+               else if(DIO_info->dir==INPUT)
+               PORTD_DIR&=~(DIO_info->pins);
+               else
+               EROR=E_NOK;
+ 1be:	81 e0       	ldi	r24, 0x01	; 1
+      EROR=E_NOK;
+   }
+   
+   
+   return EROR;
+}
+ 1c0:	08 95       	ret
+
+000001c2 <DIO_Write>:
+ERROR_STATUS DIO_Write (uint8_t GPIO, uint8_t pins, uint8_t value)
+{ 
+/*ERROR RET VARIBALE*/  
+   ERROR_STATUS EROR=E_OK;
+  /*choose any PORT*/  
+   switch (GPIO)
+ 1c2:	81 30       	cpi	r24, 0x01	; 1
+ 1c4:	a9 f0       	breq	.+42     	; 0x1f0 <DIO_Write+0x2e>
+ 1c6:	28 f0       	brcs	.+10     	; 0x1d2 <DIO_Write+0x10>
+ 1c8:	82 30       	cpi	r24, 0x02	; 2
+ 1ca:	09 f1       	breq	.+66     	; 0x20e <DIO_Write+0x4c>
+ 1cc:	83 30       	cpi	r24, 0x03	; 3
+ 1ce:	71 f1       	breq	.+92     	; 0x22c <DIO_Write+0x6a>
+ 1d0:	3c c0       	rjmp	.+120    	; 0x24a <DIO_Write+0x88>
+   {
+      case GPIOA:
+            if(value==HIGH)
+ 1d2:	4f 3f       	cpi	r20, 0xFF	; 255
+ 1d4:	29 f4       	brne	.+10     	; 0x1e0 <DIO_Write+0x1e>
+            PORTA_DATA|=pins;
+ 1d6:	8b b3       	in	r24, 0x1b	; 27
+ 1d8:	68 2b       	or	r22, r24
+ 1da:	6b bb       	out	0x1b, r22	; 27
+* 			  or even one pin.
+*/
+ERROR_STATUS DIO_Write (uint8_t GPIO, uint8_t pins, uint8_t value)
+{ 
+/*ERROR RET VARIBALE*/  
+   ERROR_STATUS EROR=E_OK;
+ 1dc:	80 e0       	ldi	r24, 0x00	; 0
+ 1de:	08 95       	ret
+   switch (GPIO)
+   {
+      case GPIOA:
+            if(value==HIGH)
+            PORTA_DATA|=pins;
+            else if(value==LOW)
+ 1e0:	41 11       	cpse	r20, r1
+ 1e2:	35 c0       	rjmp	.+106    	; 0x24e <DIO_Write+0x8c>
+            PORTA_DATA&=~(pins);
+ 1e4:	8b b3       	in	r24, 0x1b	; 27
+ 1e6:	60 95       	com	r22
+ 1e8:	68 23       	and	r22, r24
+ 1ea:	6b bb       	out	0x1b, r22	; 27
+* 			  or even one pin.
+*/
+ERROR_STATUS DIO_Write (uint8_t GPIO, uint8_t pins, uint8_t value)
+{ 
+/*ERROR RET VARIBALE*/  
+   ERROR_STATUS EROR=E_OK;
+ 1ec:	80 e0       	ldi	r24, 0x00	; 0
+ 1ee:	08 95       	ret
+            PORTA_DATA&=~(pins);
+            else
+            EROR=E_NOK;
+            break;
+      case GPIOB:
+            if(value==HIGH)
+ 1f0:	4f 3f       	cpi	r20, 0xFF	; 255
+ 1f2:	29 f4       	brne	.+10     	; 0x1fe <DIO_Write+0x3c>
+            PORTB_DATA|=pins;
+ 1f4:	88 b3       	in	r24, 0x18	; 24
+ 1f6:	68 2b       	or	r22, r24
+ 1f8:	68 bb       	out	0x18, r22	; 24
+* 			  or even one pin.
+*/
+ERROR_STATUS DIO_Write (uint8_t GPIO, uint8_t pins, uint8_t value)
+{ 
+/*ERROR RET VARIBALE*/  
+   ERROR_STATUS EROR=E_OK;
+ 1fa:	80 e0       	ldi	r24, 0x00	; 0
+ 1fc:	08 95       	ret
+            EROR=E_NOK;
+            break;
+      case GPIOB:
+            if(value==HIGH)
+            PORTB_DATA|=pins;
+            else if(value==LOW)
+ 1fe:	41 11       	cpse	r20, r1
+ 200:	28 c0       	rjmp	.+80     	; 0x252 <DIO_Write+0x90>
+            PORTB_DATA&=~(pins);
+ 202:	88 b3       	in	r24, 0x18	; 24
+ 204:	60 95       	com	r22
+ 206:	68 23       	and	r22, r24
+ 208:	68 bb       	out	0x18, r22	; 24
+* 			  or even one pin.
+*/
+ERROR_STATUS DIO_Write (uint8_t GPIO, uint8_t pins, uint8_t value)
+{ 
+/*ERROR RET VARIBALE*/  
+   ERROR_STATUS EROR=E_OK;
+ 20a:	80 e0       	ldi	r24, 0x00	; 0
+ 20c:	08 95       	ret
+            PORTB_DATA&=~(pins);
+            else
+            EROR=E_NOK;
+            break;
+      case GPIOC:
+            if(value==HIGH)
+ 20e:	4f 3f       	cpi	r20, 0xFF	; 255
+ 210:	29 f4       	brne	.+10     	; 0x21c <DIO_Write+0x5a>
+            PORTC_DATA|=pins;
+ 212:	85 b3       	in	r24, 0x15	; 21
+ 214:	68 2b       	or	r22, r24
+ 216:	65 bb       	out	0x15, r22	; 21
+* 			  or even one pin.
+*/
+ERROR_STATUS DIO_Write (uint8_t GPIO, uint8_t pins, uint8_t value)
+{ 
+/*ERROR RET VARIBALE*/  
+   ERROR_STATUS EROR=E_OK;
+ 218:	80 e0       	ldi	r24, 0x00	; 0
+ 21a:	08 95       	ret
+            EROR=E_NOK;
+            break;
+      case GPIOC:
+            if(value==HIGH)
+            PORTC_DATA|=pins;
+            else if(value==LOW)
+ 21c:	41 11       	cpse	r20, r1
+ 21e:	1b c0       	rjmp	.+54     	; 0x256 <DIO_Write+0x94>
+            PORTC_DATA&=~(pins);
+ 220:	85 b3       	in	r24, 0x15	; 21
+ 222:	60 95       	com	r22
+ 224:	68 23       	and	r22, r24
+ 226:	65 bb       	out	0x15, r22	; 21
+* 			  or even one pin.
+*/
+ERROR_STATUS DIO_Write (uint8_t GPIO, uint8_t pins, uint8_t value)
+{ 
+/*ERROR RET VARIBALE*/  
+   ERROR_STATUS EROR=E_OK;
+ 228:	80 e0       	ldi	r24, 0x00	; 0
+ 22a:	08 95       	ret
+            PORTC_DATA&=~(pins);
+            else
+            EROR=E_NOK;
+            break;
+      case GPIOD:
+            if(value==HIGH)
+ 22c:	4f 3f       	cpi	r20, 0xFF	; 255
+ 22e:	29 f4       	brne	.+10     	; 0x23a <DIO_Write+0x78>
+            PORTD_DATA|=pins;
+ 230:	82 b3       	in	r24, 0x12	; 18
+ 232:	68 2b       	or	r22, r24
+ 234:	62 bb       	out	0x12, r22	; 18
+* 			  or even one pin.
+*/
+ERROR_STATUS DIO_Write (uint8_t GPIO, uint8_t pins, uint8_t value)
+{ 
+/*ERROR RET VARIBALE*/  
+   ERROR_STATUS EROR=E_OK;
+ 236:	80 e0       	ldi	r24, 0x00	; 0
+ 238:	08 95       	ret
+            EROR=E_NOK;
+            break;
+      case GPIOD:
+            if(value==HIGH)
+            PORTD_DATA|=pins;
+            else if(value==LOW)
+ 23a:	41 11       	cpse	r20, r1
+ 23c:	0e c0       	rjmp	.+28     	; 0x25a <DIO_Write+0x98>
+            PORTD_DATA&=~(pins);
+ 23e:	82 b3       	in	r24, 0x12	; 18
+ 240:	60 95       	com	r22
+ 242:	68 23       	and	r22, r24
+ 244:	62 bb       	out	0x12, r22	; 18
+* 			  or even one pin.
+*/
+ERROR_STATUS DIO_Write (uint8_t GPIO, uint8_t pins, uint8_t value)
+{ 
+/*ERROR RET VARIBALE*/  
+   ERROR_STATUS EROR=E_OK;
+ 246:	80 e0       	ldi	r24, 0x00	; 0
+ 248:	08 95       	ret
+            else
+            EROR=E_NOK;
+            break;
+     /*if the channel is wrong */          
+      default:
+            EROR=E_NOK;
+ 24a:	81 e0       	ldi	r24, 0x01	; 1
+ 24c:	08 95       	ret
+            if(value==HIGH)
+            PORTA_DATA|=pins;
+            else if(value==LOW)
+            PORTA_DATA&=~(pins);
+            else
+            EROR=E_NOK;
+ 24e:	81 e0       	ldi	r24, 0x01	; 1
+ 250:	08 95       	ret
+            if(value==HIGH)
+            PORTB_DATA|=pins;
+            else if(value==LOW)
+            PORTB_DATA&=~(pins);
+            else
+            EROR=E_NOK;
+ 252:	81 e0       	ldi	r24, 0x01	; 1
+ 254:	08 95       	ret
+            if(value==HIGH)
+            PORTC_DATA|=pins;
+            else if(value==LOW)
+            PORTC_DATA&=~(pins);
+            else
+            EROR=E_NOK;
+ 256:	81 e0       	ldi	r24, 0x01	; 1
+ 258:	08 95       	ret
+            if(value==HIGH)
+            PORTD_DATA|=pins;
+            else if(value==LOW)
+            PORTD_DATA&=~(pins);
+            else
+            EROR=E_NOK;
+ 25a:	81 e0       	ldi	r24, 0x01	; 1
+            break;
+   }
+
+
+   return EROR;
+}
+ 25c:	08 95       	ret
+
+0000025e <Motor_Init>:
+ * In out		: none
+ * Return		: ERROR_STATUS
+ * Description	: Initialize (Enable, IN1, IN2) pins as digital outputs.
+ */
+ ERROR_STATUS Motor_Init(uint8_t Motor_Number)
+ {ERROR_STATUS ERROR=E_OK;
+ 25e:	1f 93       	push	r17
+ 260:	cf 93       	push	r28
+ 262:	df 93       	push	r29
+ 264:	00 d0       	rcall	.+0      	; 0x266 <Motor_Init+0x8>
+ 266:	00 d0       	rcall	.+0      	; 0x268 <Motor_Init+0xa>
+ 268:	1f 92       	push	r1
+ 26a:	cd b7       	in	r28, 0x3d	; 61
+ 26c:	de b7       	in	r29, 0x3e	; 62
+ 26e:	18 2f       	mov	r17, r24
+	 DIO_Cfg_s instance={GPIOD,FULL_PORT,OUTPUT};
+ 270:	83 e0       	ldi	r24, 0x03	; 3
+ 272:	89 83       	std	Y+1, r24	; 0x01
+ 274:	8f ef       	ldi	r24, 0xFF	; 255
+ 276:	8a 83       	std	Y+2, r24	; 0x02
+ 278:	8b 83       	std	Y+3, r24	; 0x03
+		 Pwm_Cfg_s instance_pwm={PWM_CH1A,PWM_PRESCALER_1024};
+ 27a:	81 e0       	ldi	r24, 0x01	; 1
+ 27c:	8c 83       	std	Y+4, r24	; 0x04
+ 27e:	86 e0       	ldi	r24, 0x06	; 6
+ 280:	8d 83       	std	Y+5, r24	; 0x05
+			 Pwm_Init(&instance_pwm);
+ 282:	ce 01       	movw	r24, r28
+ 284:	04 96       	adiw	r24, 0x04	; 4
+ 286:	cd d1       	rcall	.+922    	; 0x622 <Pwm_Init>
+			 instance_pwm.Channel=PWM_CH1B;
+ 288:	82 e0       	ldi	r24, 0x02	; 2
+ 28a:	8c 83       	std	Y+4, r24	; 0x04
+			  Pwm_Init(&instance_pwm);
+ 28c:	ce 01       	movw	r24, r28
+ 28e:	04 96       	adiw	r24, 0x04	; 4
+ 290:	c8 d1       	rcall	.+912    	; 0x622 <Pwm_Init>
+	 switch(Motor_Number)
+ 292:	11 30       	cpi	r17, 0x01	; 1
+ 294:	19 f0       	breq	.+6      	; 0x29c <Motor_Init+0x3e>
+ 296:	12 30       	cpi	r17, 0x02	; 2
+ 298:	31 f0       	breq	.+12     	; 0x2a6 <Motor_Init+0x48>
+ 29a:	0a c0       	rjmp	.+20     	; 0x2b0 <Motor_Init+0x52>
+	 {   
+		 case MOTOR_1:
+		      DIO_init(&instance);
+ 29c:	ce 01       	movw	r24, r28
+ 29e:	01 96       	adiw	r24, 0x01	; 1
+ 2a0:	2f df       	rcall	.-418    	; 0x100 <DIO_init>
+ * In out		: none
+ * Return		: ERROR_STATUS
+ * Description	: Initialize (Enable, IN1, IN2) pins as digital outputs.
+ */
+ ERROR_STATUS Motor_Init(uint8_t Motor_Number)
+ {ERROR_STATUS ERROR=E_OK;
+ 2a2:	80 e0       	ldi	r24, 0x00	; 0
+	 {   
+		 case MOTOR_1:
+		      DIO_init(&instance);
+		      break;      
+		 case MOTOR_2:
+		     DIO_init(&instance);
+ 2a4:	06 c0       	rjmp	.+12     	; 0x2b2 <Motor_Init+0x54>
+ 2a6:	ce 01       	movw	r24, r28
+ 2a8:	01 96       	adiw	r24, 0x01	; 1
+ 2aa:	2a df       	rcall	.-428    	; 0x100 <DIO_init>
+ * In out		: none
+ * Return		: ERROR_STATUS
+ * Description	: Initialize (Enable, IN1, IN2) pins as digital outputs.
+ */
+ ERROR_STATUS Motor_Init(uint8_t Motor_Number)
+ {ERROR_STATUS ERROR=E_OK;
+ 2ac:	80 e0       	ldi	r24, 0x00	; 0
+		 case MOTOR_1:
+		      DIO_init(&instance);
+		      break;      
+		 case MOTOR_2:
+		     DIO_init(&instance);
+		     break;
+ 2ae:	01 c0       	rjmp	.+2      	; 0x2b2 <Motor_Init+0x54>
+		 default:
+		     ERROR=E_NOK;
+ 2b0:	81 e0       	ldi	r24, 0x01	; 1
+		     break;     	 
+		 
+	 }
+return ERROR;	 
+ }
+ 2b2:	0f 90       	pop	r0
+ 2b4:	0f 90       	pop	r0
+ 2b6:	0f 90       	pop	r0
+ 2b8:	0f 90       	pop	r0
+ 2ba:	0f 90       	pop	r0
+ 2bc:	df 91       	pop	r29
+ 2be:	cf 91       	pop	r28
+ 2c0:	1f 91       	pop	r17
+ 2c2:	08 95       	ret
+
+000002c4 <Motor_Direction>:
+*/
+
+ERROR_STATUS Motor_Direction(uint8_t Motor_Number, uint8_t Motor_Direction)
+{
+ERROR_STATUS ERROR=E_OK;
+	switch(Motor_Number)
+ 2c4:	81 30       	cpi	r24, 0x01	; 1
+ 2c6:	19 f0       	breq	.+6      	; 0x2ce <Motor_Direction+0xa>
+ 2c8:	82 30       	cpi	r24, 0x02	; 2
+ 2ca:	29 f1       	breq	.+74     	; 0x316 <Motor_Direction+0x52>
+ 2cc:	48 c0       	rjmp	.+144    	; 0x35e <Motor_Direction+0x9a>
+	{
+		case MOTOR_1:
+		      switch(Motor_Direction)
+ 2ce:	61 30       	cpi	r22, 0x01	; 1
+ 2d0:	71 f0       	breq	.+28     	; 0x2ee <Motor_Direction+0x2a>
+ 2d2:	18 f0       	brcs	.+6      	; 0x2da <Motor_Direction+0x16>
+ 2d4:	62 30       	cpi	r22, 0x02	; 2
+ 2d6:	a9 f0       	breq	.+42     	; 0x302 <Motor_Direction+0x3e>
+ 2d8:	44 c0       	rjmp	.+136    	; 0x362 <Motor_Direction+0x9e>
+			  {
+				  case MOTOR_STOP:
+				        DIO_Write(GPIOD,BIT2,LOW);
+ 2da:	40 e0       	ldi	r20, 0x00	; 0
+ 2dc:	64 e0       	ldi	r22, 0x04	; 4
+ 2de:	83 e0       	ldi	r24, 0x03	; 3
+ 2e0:	70 df       	rcall	.-288    	; 0x1c2 <DIO_Write>
+						DIO_Write(GPIOD,BIT3,LOW);
+ 2e2:	40 e0       	ldi	r20, 0x00	; 0
+ 2e4:	68 e0       	ldi	r22, 0x08	; 8
+ 2e6:	83 e0       	ldi	r24, 0x03	; 3
+ 2e8:	6c df       	rcall	.-296    	; 0x1c2 <DIO_Write>
+ * DescriptioN: Controls the motor direction from getting the motor number and the direction.
+*/
+
+ERROR_STATUS Motor_Direction(uint8_t Motor_Number, uint8_t Motor_Direction)
+{
+ERROR_STATUS ERROR=E_OK;
+ 2ea:	80 e0       	ldi	r24, 0x00	; 0
+		      switch(Motor_Direction)
+			  {
+				  case MOTOR_STOP:
+				        DIO_Write(GPIOD,BIT2,LOW);
+						DIO_Write(GPIOD,BIT3,LOW);
+						break;
+ 2ec:	08 95       	ret
+				  case MOTOR_FORWARD:
+				        DIO_Write(GPIOD,BIT2,LOW);
+ 2ee:	40 e0       	ldi	r20, 0x00	; 0
+ 2f0:	64 e0       	ldi	r22, 0x04	; 4
+ 2f2:	83 e0       	ldi	r24, 0x03	; 3
+ 2f4:	66 df       	rcall	.-308    	; 0x1c2 <DIO_Write>
+				        DIO_Write(GPIOD,BIT3,HIGH);
+ 2f6:	4f ef       	ldi	r20, 0xFF	; 255
+ 2f8:	68 e0       	ldi	r22, 0x08	; 8
+ 2fa:	83 e0       	ldi	r24, 0x03	; 3
+ 2fc:	62 df       	rcall	.-316    	; 0x1c2 <DIO_Write>
+ * DescriptioN: Controls the motor direction from getting the motor number and the direction.
+*/
+
+ERROR_STATUS Motor_Direction(uint8_t Motor_Number, uint8_t Motor_Direction)
+{
+ERROR_STATUS ERROR=E_OK;
+ 2fe:	80 e0       	ldi	r24, 0x00	; 0
+				  case MOTOR_FORWARD:
+				        DIO_Write(GPIOD,BIT2,LOW);
+				        DIO_Write(GPIOD,BIT3,HIGH);
+				        break;
+				  case MOTOR_BACKWARD:
+				        DIO_Write(GPIOD,BIT2,HIGH);
+ 300:	08 95       	ret
+ 302:	4f ef       	ldi	r20, 0xFF	; 255
+ 304:	64 e0       	ldi	r22, 0x04	; 4
+ 306:	83 e0       	ldi	r24, 0x03	; 3
+				        DIO_Write(GPIOD,BIT3,LOW);
+ 308:	5c df       	rcall	.-328    	; 0x1c2 <DIO_Write>
+ 30a:	40 e0       	ldi	r20, 0x00	; 0
+ 30c:	68 e0       	ldi	r22, 0x08	; 8
+ 30e:	83 e0       	ldi	r24, 0x03	; 3
+ 310:	58 df       	rcall	.-336    	; 0x1c2 <DIO_Write>
+ * DescriptioN: Controls the motor direction from getting the motor number and the direction.
+*/
+
+ERROR_STATUS Motor_Direction(uint8_t Motor_Number, uint8_t Motor_Direction)
+{
+ERROR_STATUS ERROR=E_OK;
+ 312:	80 e0       	ldi	r24, 0x00	; 0
+				        DIO_Write(GPIOD,BIT3,HIGH);
+				        break;
+				  case MOTOR_BACKWARD:
+				        DIO_Write(GPIOD,BIT2,HIGH);
+				        DIO_Write(GPIOD,BIT3,LOW);
+				        break;
+ 314:	08 95       	ret
+				        break;
+			  }
+			  
+		      break;
+		case MOTOR_2:
+              switch(Motor_Direction)
+ 316:	61 30       	cpi	r22, 0x01	; 1
+ 318:	71 f0       	breq	.+28     	; 0x336 <Motor_Direction+0x72>
+ 31a:	18 f0       	brcs	.+6      	; 0x322 <Motor_Direction+0x5e>
+ 31c:	62 30       	cpi	r22, 0x02	; 2
+ 31e:	a9 f0       	breq	.+42     	; 0x34a <Motor_Direction+0x86>
+              {
+	              case MOTOR_STOP:
+	              DIO_Write(GPIOD,BIT6,LOW);
+ 320:	22 c0       	rjmp	.+68     	; 0x366 <Motor_Direction+0xa2>
+ 322:	40 e0       	ldi	r20, 0x00	; 0
+ 324:	60 e4       	ldi	r22, 0x40	; 64
+ 326:	83 e0       	ldi	r24, 0x03	; 3
+	              DIO_Write(GPIOD,BIT7,LOW);
+ 328:	4c df       	rcall	.-360    	; 0x1c2 <DIO_Write>
+ 32a:	40 e0       	ldi	r20, 0x00	; 0
+ 32c:	60 e8       	ldi	r22, 0x80	; 128
+ 32e:	83 e0       	ldi	r24, 0x03	; 3
+ * DescriptioN: Controls the motor direction from getting the motor number and the direction.
+*/
+
+ERROR_STATUS Motor_Direction(uint8_t Motor_Number, uint8_t Motor_Direction)
+{
+ERROR_STATUS ERROR=E_OK;
+ 330:	48 df       	rcall	.-368    	; 0x1c2 <DIO_Write>
+	              case MOTOR_STOP:
+	              DIO_Write(GPIOD,BIT6,LOW);
+	              DIO_Write(GPIOD,BIT7,LOW);
+	              break;
+	              case MOTOR_FORWARD:
+	              DIO_Write(GPIOD,BIT6,LOW);
+ 332:	80 e0       	ldi	r24, 0x00	; 0
+ 334:	08 95       	ret
+ 336:	40 e0       	ldi	r20, 0x00	; 0
+ 338:	60 e4       	ldi	r22, 0x40	; 64
+ 33a:	83 e0       	ldi	r24, 0x03	; 3
+	              DIO_Write(GPIOD,BIT7,HIGH);
+ 33c:	42 df       	rcall	.-380    	; 0x1c2 <DIO_Write>
+ 33e:	4f ef       	ldi	r20, 0xFF	; 255
+ 340:	60 e8       	ldi	r22, 0x80	; 128
+ 342:	83 e0       	ldi	r24, 0x03	; 3
+ * DescriptioN: Controls the motor direction from getting the motor number and the direction.
+*/
+
+ERROR_STATUS Motor_Direction(uint8_t Motor_Number, uint8_t Motor_Direction)
+{
+ERROR_STATUS ERROR=E_OK;
+ 344:	3e df       	rcall	.-388    	; 0x1c2 <DIO_Write>
+	              DIO_Write(GPIOD,BIT7,LOW);
+	              break;
+	              case MOTOR_FORWARD:
+	              DIO_Write(GPIOD,BIT6,LOW);
+	              DIO_Write(GPIOD,BIT7,HIGH);
+	              break;
+ 346:	80 e0       	ldi	r24, 0x00	; 0
+	              case MOTOR_BACKWARD:
+	              DIO_Write(GPIOD,BIT6,HIGH);
+ 348:	08 95       	ret
+ 34a:	4f ef       	ldi	r20, 0xFF	; 255
+ 34c:	60 e4       	ldi	r22, 0x40	; 64
+ 34e:	83 e0       	ldi	r24, 0x03	; 3
+ 350:	38 df       	rcall	.-400    	; 0x1c2 <DIO_Write>
+	              DIO_Write(GPIOD,BIT7,LOW);
+ 352:	40 e0       	ldi	r20, 0x00	; 0
+ 354:	60 e8       	ldi	r22, 0x80	; 128
+ 356:	83 e0       	ldi	r24, 0x03	; 3
+ 358:	34 df       	rcall	.-408    	; 0x1c2 <DIO_Write>
+ 35a:	80 e0       	ldi	r24, 0x00	; 0
+ * DescriptioN: Controls the motor direction from getting the motor number and the direction.
+*/
+
+ERROR_STATUS Motor_Direction(uint8_t Motor_Number, uint8_t Motor_Direction)
+{
+ERROR_STATUS ERROR=E_OK;
+ 35c:	08 95       	ret
+	              DIO_Write(GPIOD,BIT7,HIGH);
+	              break;
+	              case MOTOR_BACKWARD:
+	              DIO_Write(GPIOD,BIT6,HIGH);
+	              DIO_Write(GPIOD,BIT7,LOW);
+	              break;
+ 35e:	81 e0       	ldi	r24, 0x01	; 1
+				      ERROR=E_NOK;
+	                  break;
+              }
+              break;		      
+		default:
+		      ERROR=E_NOK;
+ 360:	08 95       	ret
+ 362:	81 e0       	ldi	r24, 0x01	; 1
+				  case MOTOR_BACKWARD:
+				        DIO_Write(GPIOD,BIT2,HIGH);
+				        DIO_Write(GPIOD,BIT3,LOW);
+				        break;
+				  default:
+				        ERROR=E_NOK;
+ 364:	08 95       	ret
+ 366:	81 e0       	ldi	r24, 0x01	; 1
+	              case MOTOR_BACKWARD:
+	              DIO_Write(GPIOD,BIT6,HIGH);
+	              DIO_Write(GPIOD,BIT7,LOW);
+	              break;
+	              default:
+				      ERROR=E_NOK;
+ 368:	08 95       	ret
+
+0000036a <Motor_Start>:
+		
+	}
+	
+	
+	return ERROR;
+}
+ 36a:	81 30       	cpi	r24, 0x01	; 1
+ * Description: Start the motor.
+*/
+ERROR_STATUS Motor_Start(uint8_t Motor_Number, uint8_t Mot_Speed)
+{
+ERROR_STATUS ERROR=E_OK; 
+switch(Motor_Number)
+ 36c:	19 f0       	breq	.+6      	; 0x374 <Motor_Start+0xa>
+ 36e:	82 30       	cpi	r24, 0x02	; 2
+ 370:	49 f0       	breq	.+18     	; 0x384 <Motor_Start+0x1a>
+ 372:	10 c0       	rjmp	.+32     	; 0x394 <Motor_Start+0x2a>
+{
+    case MOTOR_1:
+	     Pwm_Start(PWM_CH1B,Mot_Speed,62);
+ 374:	2e e3       	ldi	r18, 0x3E	; 62
+ 376:	30 e0       	ldi	r19, 0x00	; 0
+ 378:	40 e0       	ldi	r20, 0x00	; 0
+ 37a:	50 e0       	ldi	r21, 0x00	; 0
+ 37c:	82 e0       	ldi	r24, 0x02	; 2
+ 37e:	1f d2       	rcall	.+1086   	; 0x7be <Pwm_Start>
+ * return 	 : ERROR_STATUS
+ * Description: Start the motor.
+*/
+ERROR_STATUS Motor_Start(uint8_t Motor_Number, uint8_t Mot_Speed)
+{
+ERROR_STATUS ERROR=E_OK; 
+ 380:	80 e0       	ldi	r24, 0x00	; 0
+switch(Motor_Number)
+{
+    case MOTOR_1:
+	     Pwm_Start(PWM_CH1B,Mot_Speed,62);
+		 break;
+ 382:	08 95       	ret
+	case MOTOR_2:
+	     Pwm_Start(PWM_CH1A,Mot_Speed,62);
+ 384:	2e e3       	ldi	r18, 0x3E	; 62
+ 386:	30 e0       	ldi	r19, 0x00	; 0
+ 388:	40 e0       	ldi	r20, 0x00	; 0
+ 38a:	50 e0       	ldi	r21, 0x00	; 0
+ 38c:	81 e0       	ldi	r24, 0x01	; 1
+ 38e:	17 d2       	rcall	.+1070   	; 0x7be <Pwm_Start>
+ * return 	 : ERROR_STATUS
+ * Description: Start the motor.
+*/
+ERROR_STATUS Motor_Start(uint8_t Motor_Number, uint8_t Mot_Speed)
+{
+ERROR_STATUS ERROR=E_OK; 
+ 390:	80 e0       	ldi	r24, 0x00	; 0
+    case MOTOR_1:
+	     Pwm_Start(PWM_CH1B,Mot_Speed,62);
+		 break;
+	case MOTOR_2:
+	     Pwm_Start(PWM_CH1A,Mot_Speed,62);
+	     break;	
+ 392:	08 95       	ret
+	default:
+		ERROR=E_NOK;
+ 394:	81 e0       	ldi	r24, 0x01	; 1
+		break;
+}
+return ERROR;
+}
+ 396:	08 95       	ret
+
+00000398 <Motor_Stop>:
+ * Description: stop the motor.
+*/
+ERROR_STATUS Motor_Stop(uint8_t Motor_Number)
+{
+	ERROR_STATUS ERROR=E_OK;
+switch(Motor_Number)
+ 398:	81 30       	cpi	r24, 0x01	; 1
+ 39a:	19 f0       	breq	.+6      	; 0x3a2 <Motor_Stop+0xa>
+ 39c:	82 30       	cpi	r24, 0x02	; 2
+ 39e:	79 f0       	breq	.+30     	; 0x3be <Motor_Stop+0x26>
+ 3a0:	1c c0       	rjmp	.+56     	; 0x3da <Motor_Stop+0x42>
+{	
+case MOTOR_1:
+     DIO_Write(GPIOD,BIT4,LOW);
+ 3a2:	40 e0       	ldi	r20, 0x00	; 0
+ 3a4:	60 e1       	ldi	r22, 0x10	; 16
+ 3a6:	83 e0       	ldi	r24, 0x03	; 3
+ 3a8:	0c df       	rcall	.-488    	; 0x1c2 <DIO_Write>
+	  DIO_Write(GPIOD,BIT3,LOW);
+ 3aa:	40 e0       	ldi	r20, 0x00	; 0
+ 3ac:	68 e0       	ldi	r22, 0x08	; 8
+ 3ae:	83 e0       	ldi	r24, 0x03	; 3
+ 3b0:	08 df       	rcall	.-496    	; 0x1c2 <DIO_Write>
+     DIO_Write(GPIOD,BIT2,LOW);
+ 3b2:	40 e0       	ldi	r20, 0x00	; 0
+ 3b4:	64 e0       	ldi	r22, 0x04	; 4
+ 3b6:	83 e0       	ldi	r24, 0x03	; 3
+ 3b8:	04 df       	rcall	.-504    	; 0x1c2 <DIO_Write>
+ * return 	 : ERROR_STATUS
+ * Description: stop the motor.
+*/
+ERROR_STATUS Motor_Stop(uint8_t Motor_Number)
+{
+	ERROR_STATUS ERROR=E_OK;
+ 3ba:	80 e0       	ldi	r24, 0x00	; 0
+{	
+case MOTOR_1:
+     DIO_Write(GPIOD,BIT4,LOW);
+	  DIO_Write(GPIOD,BIT3,LOW);
+     DIO_Write(GPIOD,BIT2,LOW);
+	  break;
+ 3bc:	08 95       	ret
+case MOTOR_2:
+     DIO_Write(GPIOD,BIT5,LOW);
+ 3be:	40 e0       	ldi	r20, 0x00	; 0
+ 3c0:	60 e2       	ldi	r22, 0x20	; 32
+ 3c2:	83 e0       	ldi	r24, 0x03	; 3
+ 3c4:	fe de       	rcall	.-516    	; 0x1c2 <DIO_Write>
+     DIO_Write(GPIOD,BIT6,LOW);
+ 3c6:	40 e0       	ldi	r20, 0x00	; 0
+ 3c8:	60 e4       	ldi	r22, 0x40	; 64
+ 3ca:	83 e0       	ldi	r24, 0x03	; 3
+ 3cc:	fa de       	rcall	.-524    	; 0x1c2 <DIO_Write>
+     DIO_Write(GPIOD,BIT7,LOW);
+ 3ce:	40 e0       	ldi	r20, 0x00	; 0
+ 3d0:	60 e8       	ldi	r22, 0x80	; 128
+ 3d2:	83 e0       	ldi	r24, 0x03	; 3
+ 3d4:	f6 de       	rcall	.-532    	; 0x1c2 <DIO_Write>
+ 3d6:	80 e0       	ldi	r24, 0x00	; 0
+ * return 	 : ERROR_STATUS
+ * Description: stop the motor.
+*/
+ERROR_STATUS Motor_Stop(uint8_t Motor_Number)
+{
+	ERROR_STATUS ERROR=E_OK;
+ 3d8:	08 95       	ret
+	  break;
+case MOTOR_2:
+     DIO_Write(GPIOD,BIT5,LOW);
+     DIO_Write(GPIOD,BIT6,LOW);
+     DIO_Write(GPIOD,BIT7,LOW);
+     break;
+ 3da:	81 e0       	ldi	r24, 0x01	; 1
+default:
+    ERROR=E_NOK;
+ 3dc:	08 95       	ret
+
+000003de <Steering_Init>:
+/*		      API Implementation 		        */
+/************************************************************************/
+
+
+ERROR_STATUS Steering_Init(void)
+{
+ 3de:	cf 93       	push	r28
+	ERROR_STATUS ERROR=E_OK;
+	if(Motor_Init(MOTOR_1)!=E_OK)
+ 3e0:	81 e0       	ldi	r24, 0x01	; 1
+ 3e2:	3d df       	rcall	.-390    	; 0x25e <Motor_Init>
+ 3e4:	c8 2f       	mov	r28, r24
+	ERROR=E_NOK;
+	if(Motor_Init(MOTOR_2)!=E_OK)
+ 3e6:	82 e0       	ldi	r24, 0x02	; 2
+ 3e8:	3a df       	rcall	.-396    	; 0x25e <Motor_Init>
+ 3ea:	81 11       	cpse	r24, r1
+ 3ec:	05 c0       	rjmp	.+10     	; 0x3f8 <Steering_Init+0x1a>
+/************************************************************************/
+
+
+ERROR_STATUS Steering_Init(void)
+{
+	ERROR_STATUS ERROR=E_OK;
+ 3ee:	81 e0       	ldi	r24, 0x01	; 1
+ 3f0:	c1 11       	cpse	r28, r1
+ 3f2:	03 c0       	rjmp	.+6      	; 0x3fa <Steering_Init+0x1c>
+ 3f4:	80 e0       	ldi	r24, 0x00	; 0
+ 3f6:	01 c0       	rjmp	.+2      	; 0x3fa <Steering_Init+0x1c>
+	if(Motor_Init(MOTOR_1)!=E_OK)
+	ERROR=E_NOK;
+	if(Motor_Init(MOTOR_2)!=E_OK)
+	ERROR=E_NOK;
+ 3f8:	81 e0       	ldi	r24, 0x01	; 1
+	return ERROR;
+}
+ 3fa:	cf 91       	pop	r28
+ 3fc:	08 95       	ret
+
+000003fe <Steering_SteerCar>:
+
+ERROR_STATUS Steering_SteerCar(uint8_t Steering_CarCmd, uint8_t speed)
+{
+ 3fe:	cf 93       	push	r28
+ 400:	c6 2f       	mov	r28, r22
+	ERROR_STATUS ERROR=E_OK;
+	switch(Steering_CarCmd)
+ 402:	82 30       	cpi	r24, 0x02	; 2
+ 404:	29 f1       	breq	.+74     	; 0x450 <__LOCK_REGION_LENGTH__+0x50>
+ 406:	28 f4       	brcc	.+10     	; 0x412 <__LOCK_REGION_LENGTH__+0x12>
+ 408:	88 23       	and	r24, r24
+ 40a:	49 f0       	breq	.+18     	; 0x41e <__LOCK_REGION_LENGTH__+0x1e>
+ 40c:	81 30       	cpi	r24, 0x01	; 1
+ 40e:	99 f0       	breq	.+38     	; 0x436 <__LOCK_REGION_LENGTH__+0x36>
+ 410:	41 c0       	rjmp	.+130    	; 0x494 <__LOCK_REGION_LENGTH__+0x94>
+ 412:	83 30       	cpi	r24, 0x03	; 3
+ 414:	59 f1       	breq	.+86     	; 0x46c <__LOCK_REGION_LENGTH__+0x6c>
+ 416:	84 30       	cpi	r24, 0x04	; 4
+ 418:	09 f4       	brne	.+2      	; 0x41c <__LOCK_REGION_LENGTH__+0x1c>
+ 41a:	32 c0       	rjmp	.+100    	; 0x480 <__LOCK_REGION_LENGTH__+0x80>
+ 41c:	3b c0       	rjmp	.+118    	; 0x494 <__LOCK_REGION_LENGTH__+0x94>
+	{
+		case CAR_STOP	:
+                 Motor_Stop(MOTOR_1);
+ 41e:	81 e0       	ldi	r24, 0x01	; 1
+ 420:	bb df       	rcall	.-138    	; 0x398 <Motor_Stop>
+                 Motor_Stop(MOTOR_2);
+ 422:	82 e0       	ldi	r24, 0x02	; 2
+ 424:	b9 df       	rcall	.-142    	; 0x398 <Motor_Stop>
+                 Motor_Start(MOTOR_2,0);
+ 426:	60 e0       	ldi	r22, 0x00	; 0
+ 428:	82 e0       	ldi	r24, 0x02	; 2
+ 42a:	9f df       	rcall	.-194    	; 0x36a <Motor_Start>
+                 Motor_Start(MOTOR_1,0);
+ 42c:	60 e0       	ldi	r22, 0x00	; 0
+ 42e:	81 e0       	ldi	r24, 0x01	; 1
+ 430:	9c df       	rcall	.-200    	; 0x36a <Motor_Start>
+	return ERROR;
+}
+
+ERROR_STATUS Steering_SteerCar(uint8_t Steering_CarCmd, uint8_t speed)
+{
+	ERROR_STATUS ERROR=E_OK;
+ 432:	80 e0       	ldi	r24, 0x00	; 0
+		case CAR_STOP	:
+                 Motor_Stop(MOTOR_1);
+                 Motor_Stop(MOTOR_2);
+                 Motor_Start(MOTOR_2,0);
+                 Motor_Start(MOTOR_1,0);
+                 break;
+ 434:	30 c0       	rjmp	.+96     	; 0x496 <__LOCK_REGION_LENGTH__+0x96>
+		case CAR_FORWARD :	
+                Motor_Start(MOTOR_2,speed);
+ 436:	82 e0       	ldi	r24, 0x02	; 2
+ 438:	98 df       	rcall	.-208    	; 0x36a <Motor_Start>
+                Motor_Start(MOTOR_1,speed);
+ 43a:	6c 2f       	mov	r22, r28
+ 43c:	81 e0       	ldi	r24, 0x01	; 1
+ 43e:	95 df       	rcall	.-214    	; 0x36a <Motor_Start>
+                Motor_Direction(MOTOR_1,MOTOR_FORWARD);
+ 440:	61 e0       	ldi	r22, 0x01	; 1
+ 442:	81 e0       	ldi	r24, 0x01	; 1
+ 444:	3f df       	rcall	.-386    	; 0x2c4 <Motor_Direction>
+ 446:	61 e0       	ldi	r22, 0x01	; 1
+                Motor_Direction(MOTOR_2,MOTOR_FORWARD);
+ 448:	82 e0       	ldi	r24, 0x02	; 2
+ 44a:	3c df       	rcall	.-392    	; 0x2c4 <Motor_Direction>
+ 44c:	80 e0       	ldi	r24, 0x00	; 0
+	return ERROR;
+}
+
+ERROR_STATUS Steering_SteerCar(uint8_t Steering_CarCmd, uint8_t speed)
+{
+	ERROR_STATUS ERROR=E_OK;
+ 44e:	23 c0       	rjmp	.+70     	; 0x496 <__LOCK_REGION_LENGTH__+0x96>
+		case CAR_FORWARD :	
+                Motor_Start(MOTOR_2,speed);
+                Motor_Start(MOTOR_1,speed);
+                Motor_Direction(MOTOR_1,MOTOR_FORWARD);
+                Motor_Direction(MOTOR_2,MOTOR_FORWARD);
+                break;  
+ 450:	62 e3       	ldi	r22, 0x32	; 50
+		case CAR_BACKWARD : 
+                  Motor_Start(MOTOR_2,50);
+ 452:	82 e0       	ldi	r24, 0x02	; 2
+ 454:	8a df       	rcall	.-236    	; 0x36a <Motor_Start>
+ 456:	62 e3       	ldi	r22, 0x32	; 50
+                  Motor_Start(MOTOR_1,50);
+ 458:	81 e0       	ldi	r24, 0x01	; 1
+ 45a:	87 df       	rcall	.-242    	; 0x36a <Motor_Start>
+ 45c:	62 e0       	ldi	r22, 0x02	; 2
+                  Motor_Direction(MOTOR_1,MOTOR_BACKWARD);
+ 45e:	81 e0       	ldi	r24, 0x01	; 1
+ 460:	31 df       	rcall	.-414    	; 0x2c4 <Motor_Direction>
+ 462:	62 e0       	ldi	r22, 0x02	; 2
+                  Motor_Direction(MOTOR_2,MOTOR_BACKWARD);
+ 464:	82 e0       	ldi	r24, 0x02	; 2
+ 466:	2e df       	rcall	.-420    	; 0x2c4 <Motor_Direction>
+ 468:	80 e0       	ldi	r24, 0x00	; 0
+	return ERROR;
+}
+
+ERROR_STATUS Steering_SteerCar(uint8_t Steering_CarCmd, uint8_t speed)
+{
+	ERROR_STATUS ERROR=E_OK;
+ 46a:	15 c0       	rjmp	.+42     	; 0x496 <__LOCK_REGION_LENGTH__+0x96>
+                  Motor_Start(MOTOR_1,50);
+                  Motor_Direction(MOTOR_1,MOTOR_BACKWARD);
+                  Motor_Direction(MOTOR_2,MOTOR_BACKWARD);
+                  break;
+		case CAR_RIGHT	:
+                 Motor_Stop(MOTOR_1);
+ 46c:	81 e0       	ldi	r24, 0x01	; 1
+ 46e:	94 df       	rcall	.-216    	; 0x398 <Motor_Stop>
+                 Motor_Start(MOTOR_2,50);
+ 470:	62 e3       	ldi	r22, 0x32	; 50
+ 472:	82 e0       	ldi	r24, 0x02	; 2
+ 474:	7a df       	rcall	.-268    	; 0x36a <Motor_Start>
+                 Motor_Direction(MOTOR_2,MOTOR_FORWARD);
+ 476:	61 e0       	ldi	r22, 0x01	; 1
+ 478:	82 e0       	ldi	r24, 0x02	; 2
+ 47a:	24 df       	rcall	.-440    	; 0x2c4 <Motor_Direction>
+ 47c:	80 e0       	ldi	r24, 0x00	; 0
+	return ERROR;
+}
+
+ERROR_STATUS Steering_SteerCar(uint8_t Steering_CarCmd, uint8_t speed)
+{
+	ERROR_STATUS ERROR=E_OK;
+ 47e:	0b c0       	rjmp	.+22     	; 0x496 <__LOCK_REGION_LENGTH__+0x96>
+                  break;
+		case CAR_RIGHT	:
+                 Motor_Stop(MOTOR_1);
+                 Motor_Start(MOTOR_2,50);
+                 Motor_Direction(MOTOR_2,MOTOR_FORWARD);
+                 break;
+ 480:	82 e0       	ldi	r24, 0x02	; 2
+		case CAR_LEFT	:
+                 Motor_Stop(MOTOR_2);
+ 482:	8a df       	rcall	.-236    	; 0x398 <Motor_Stop>
+ 484:	62 e3       	ldi	r22, 0x32	; 50
+ 486:	81 e0       	ldi	r24, 0x01	; 1
+                 Motor_Start(MOTOR_1,50);
+ 488:	70 df       	rcall	.-288    	; 0x36a <Motor_Start>
+ 48a:	61 e0       	ldi	r22, 0x01	; 1
+ 48c:	81 e0       	ldi	r24, 0x01	; 1
+ 48e:	1a df       	rcall	.-460    	; 0x2c4 <Motor_Direction>
+                 Motor_Direction(MOTOR_1,MOTOR_FORWARD);
+ 490:	81 e0       	ldi	r24, 0x01	; 1
+ 492:	01 c0       	rjmp	.+2      	; 0x496 <__LOCK_REGION_LENGTH__+0x96>
+ 494:	81 e0       	ldi	r24, 0x01	; 1
+ 496:	cf 91       	pop	r28
+		default:
+		  ERROR=E_NOK;
+ 498:	08 95       	ret
+
+0000049a <main>:
+ */ 
+
+#include "car_sm.h"
+int main(void)
+{ 
+Car_SM_Init();
+ 49a:	ff dd       	rcall	.-1026   	; 0x9a <Car_SM_Init>
+
+	while(1)
+  {
+	Car_SM_Update();
+ 49c:	08 de       	rcall	.-1008   	; 0xae <Car_SM_Update>
+ 49e:	64 e6       	ldi	r22, 0x64	; 100
+   softwareDelayMs(100);
+ 4a0:	70 e0       	ldi	r23, 0x00	; 0
+ 4a2:	80 e0       	ldi	r24, 0x00	; 0
+ 4a4:	90 e0       	ldi	r25, 0x00	; 0
+ 4a6:	71 d2       	rcall	.+1250   	; 0x98a <softwareDelayMs>
+ 4a8:	f9 cf       	rjmp	.-14     	; 0x49c <main+0x2>
+
+000004aa <Icu_Init>:
+ 4aa:	0f 93       	push	r16
+ *				  - E_NOK : not initialized successfully				  *
+ * Description  : Initializes the ICU by initializing the timer			  *
+ * 				  and enabling the global interrupt						  *
+ **************************************************************************/
+ERROR_STATUS Icu_Init(Icu_cfg_s * Icu_Cfg)
+{ERROR_STATUS ERROR=E_OK;	
+ 4ac:	1f 93       	push	r17
+ 4ae:	cf 93       	push	r28
+ 4b0:	df 93       	push	r29
+ 4b2:	00 d0       	rcall	.+0      	; 0x4b4 <Icu_Init+0xa>
+ 4b4:	00 d0       	rcall	.+0      	; 0x4b6 <Icu_Init+0xc>
+ 4b6:	1f 92       	push	r1
+ 4b8:	cd b7       	in	r28, 0x3d	; 61
+ 4ba:	de b7       	in	r29, 0x3e	; 62
+	if(NULL != Icu_Cfg)
+ 4bc:	00 97       	sbiw	r24, 0x00	; 0
+ 4be:	61 f1       	breq	.+88     	; 0x518 <Icu_Init+0x6e>
+	{
+		uint8_t dummyFlag;
+		switch(Icu_Cfg->ICU_Ch_Timer)
+ 4c0:	fc 01       	movw	r30, r24
+ 4c2:	21 81       	ldd	r18, Z+1	; 0x01
+ 4c4:	22 23       	and	r18, r18
+ 4c6:	21 f0       	breq	.+8      	; 0x4d0 <Icu_Init+0x26>
+ 4c8:	23 30       	cpi	r18, 0x03	; 3
+ 4ca:	10 f1       	brcs	.+68     	; 0x510 <Icu_Init+0x66>
+		case (ICU_TIMER_CH1):
+			break;
+		case (ICU_TIMER_CH2):
+			break;
+		default:
+			ERROR=E_NOK;
+ 4cc:	81 e0       	ldi	r24, 0x01	; 1
+ 4ce:	25 c0       	rjmp	.+74     	; 0x51a <Icu_Init+0x70>
+ 4d0:	8c 01       	movw	r16, r24
+	{
+		uint8_t dummyFlag;
+		switch(Icu_Cfg->ICU_Ch_Timer)
+		{
+		case (ICU_TIMER_CH0):
+			if(Timer_GetStatus(TIMER_0, &dummyFlag) == E_NOK)
+ 4d2:	be 01       	movw	r22, r28
+ 4d4:	6b 5f       	subi	r22, 0xFB	; 251
+ 4d6:	7f 4f       	sbci	r23, 0xFF	; 255
+ 4d8:	80 e0       	ldi	r24, 0x00	; 0
+ 4da:	09 d4       	rcall	.+2066   	; 0xcee <Timer_GetStatus>
+ 4dc:	81 30       	cpi	r24, 0x01	; 1
+ 4de:	d1 f4       	brne	.+52     	; 0x514 <Icu_Init+0x6a>
+			{
+				Timer_cfg_s ST_Timer0 = {
+				ST_Timer0.Timer_CH = TIMER_0,
+ 4e0:	19 82       	std	Y+1, r1	; 0x01
+				ST_Timer0.Timer_Mode = TIMER_MODE,
+ 4e2:	1a 82       	std	Y+2, r1	; 0x02
+				ST_Timer0.Timer_Int_MODE = TIMER_INTERRUPT_MODE,
+ 4e4:	8b 83       	std	Y+3, r24	; 0x03
+				ST_Timer0.Timer_Prescaler = TIMER_PRESCALER_1024};
+ 4e6:	87 e0       	ldi	r24, 0x07	; 7
+ 4e8:	8c 83       	std	Y+4, r24	; 0x04
+				if(Timer_Init(&ST_Timer0) == E_OK)
+ 4ea:	ce 01       	movw	r24, r28
+ 4ec:	01 96       	adiw	r24, 0x01	; 1
+ 4ee:	67 d2       	rcall	.+1230   	; 0x9be <Timer_Init>
+ 4f0:	81 11       	cpse	r24, r1
+ 4f2:	0a c0       	rjmp	.+20     	; 0x508 <Icu_Init+0x5e>
+				{
+					if(Icu_Cfg->ICU_Ch_No == ICU_CH2)
+ 4f4:	f8 01       	movw	r30, r16
+ 4f6:	80 81       	ld	r24, Z
+ 4f8:	82 30       	cpi	r24, 0x02	; 2
+ 4fa:	41 f4       	brne	.+16     	; 0x50c <Icu_Init+0x62>
+					{
+						/*INIT INTERRPUT 2*/
+						sei();
+ 4fc:	78 94       	sei
+						/*rissing edge*/
+						MCUCSR|=(1<<ISC2);					
+ 4fe:	84 b7       	in	r24, 0x34	; 52
+ 500:	80 64       	ori	r24, 0x40	; 64
+ 502:	84 bf       	out	0x34, r24	; 52
+ *				  - E_NOK : not initialized successfully				  *
+ * Description  : Initializes the ICU by initializing the timer			  *
+ * 				  and enabling the global interrupt						  *
+ **************************************************************************/
+ERROR_STATUS Icu_Init(Icu_cfg_s * Icu_Cfg)
+{ERROR_STATUS ERROR=E_OK;	
+ 504:	80 e0       	ldi	r24, 0x00	; 0
+ 506:	09 c0       	rjmp	.+18     	; 0x51a <Icu_Init+0x70>
+						MCUCSR|=(1<<ISC2);					
+					}
+				}
+				else
+				{
+					ERROR=E_NOK;
+ 508:	81 e0       	ldi	r24, 0x01	; 1
+ 50a:	07 c0       	rjmp	.+14     	; 0x51a <Icu_Init+0x70>
+ *				  - E_NOK : not initialized successfully				  *
+ * Description  : Initializes the ICU by initializing the timer			  *
+ * 				  and enabling the global interrupt						  *
+ **************************************************************************/
+ERROR_STATUS Icu_Init(Icu_cfg_s * Icu_Cfg)
+{ERROR_STATUS ERROR=E_OK;	
+ 50c:	80 e0       	ldi	r24, 0x00	; 0
+ 50e:	05 c0       	rjmp	.+10     	; 0x51a <Icu_Init+0x70>
+ 510:	80 e0       	ldi	r24, 0x00	; 0
+ 512:	03 c0       	rjmp	.+6      	; 0x51a <Icu_Init+0x70>
+					ERROR=E_NOK;
+				}
+			}
+			else
+			{
+				ERROR=E_NOK;
+ 514:	81 e0       	ldi	r24, 0x01	; 1
+ 516:	01 c0       	rjmp	.+2      	; 0x51a <Icu_Init+0x70>
+			break;
+		}
+	}
+	else
+	{
+		ERROR=E_NOK;
+ 518:	81 e0       	ldi	r24, 0x01	; 1
+	}
+	return ERROR;
+}
+ 51a:	0f 90       	pop	r0
+ 51c:	0f 90       	pop	r0
+ 51e:	0f 90       	pop	r0
+ 520:	0f 90       	pop	r0
+ 522:	0f 90       	pop	r0
+ 524:	df 91       	pop	r29
+ 526:	cf 91       	pop	r28
+ 528:	1f 91       	pop	r17
+ 52a:	0f 91       	pop	r16
+ 52c:	08 95       	ret
+
+0000052e <Icu_ReadTime>:
+ * 				  - E_OK : uccessful									   *
+ *				  - E_NOK : not successful								   *
+ * Description	: calculates the time between 2 edges				       *
+ ***************************************************************************/
+ ERROR_STATUS Icu_ReadTime(uint8_t Icu_Channel, uint8_t Icu_EdgeToEdge, uint32_t * Icu_Time)
+ {
+ 52e:	0f 93       	push	r16
+ 530:	1f 93       	push	r17
+	 ERROR_STATUS ERROR=E_OK;
+	 switch(Icu_Channel)
+ 532:	82 30       	cpi	r24, 0x02	; 2
+ 534:	29 f4       	brne	.+10     	; 0x540 <Icu_ReadTime+0x12>
+					break;  				  	 
+		 case ICU_CH1:
+		            ERROR=E_NOK;
+					break;
+		 case ICU_CH2:
+		           GICR|=(1<<INT2);
+ 536:	8b b7       	in	r24, 0x3b	; 59
+ 538:	80 62       	ori	r24, 0x20	; 32
+ 53a:	8b bf       	out	0x3b, r24	; 59
+ *				  - E_NOK : not successful								   *
+ * Description	: calculates the time between 2 edges				       *
+ ***************************************************************************/
+ ERROR_STATUS Icu_ReadTime(uint8_t Icu_Channel, uint8_t Icu_EdgeToEdge, uint32_t * Icu_Time)
+ {
+	 ERROR_STATUS ERROR=E_OK;
+ 53c:	80 e0       	ldi	r24, 0x00	; 0
+		 case ICU_CH1:
+		            ERROR=E_NOK;
+					break;
+		 case ICU_CH2:
+		           GICR|=(1<<INT2);
+		           break;
+ 53e:	01 c0       	rjmp	.+2      	; 0x542 <Icu_ReadTime+0x14>
+ {
+	 ERROR_STATUS ERROR=E_OK;
+	 switch(Icu_Channel)
+	 {
+		 case ICU_CH0:
+		 		 	ERROR=E_NOK;
+ 540:	81 e0       	ldi	r24, 0x01	; 1
+		       ERROR=E_NOK;
+			   break;		   
+	 }
+ 
+   
+	 switch(Icu_EdgeToEdge)
+ 542:	61 30       	cpi	r22, 0x01	; 1
+ 544:	81 f0       	breq	.+32     	; 0x566 <Icu_ReadTime+0x38>
+ 546:	18 f0       	brcs	.+6      	; 0x54e <Icu_ReadTime+0x20>
+ 548:	62 30       	cpi	r22, 0x02	; 2
+ 54a:	c9 f0       	breq	.+50     	; 0x57e <Icu_ReadTime+0x50>
+ 54c:	24 c0       	rjmp	.+72     	; 0x596 <Icu_ReadTime+0x68>
+	 {
+		 case ICU_RISE_TO_RISE:
+		       *Icu_Time=gu8_risetorise;
+ 54e:	00 91 7c 00 	lds	r16, 0x007C	; 0x80007c <__data_end>
+ 552:	10 91 7d 00 	lds	r17, 0x007D	; 0x80007d <__data_end+0x1>
+ 556:	20 e0       	ldi	r18, 0x00	; 0
+ 558:	30 e0       	ldi	r19, 0x00	; 0
+ 55a:	fa 01       	movw	r30, r20
+ 55c:	00 83       	st	Z, r16
+ 55e:	11 83       	std	Z+1, r17	; 0x01
+ 560:	22 83       	std	Z+2, r18	; 0x02
+ 562:	33 83       	std	Z+3, r19	; 0x03
+			   break;
+ 564:	19 c0       	rjmp	.+50     	; 0x598 <Icu_ReadTime+0x6a>
+		 case ICU_RISE_TO_FALL:
+		      *Icu_Time=gu8_risetofall;
+ 566:	00 91 80 00 	lds	r16, 0x0080	; 0x800080 <gu8_risetofall>
+ 56a:	10 91 81 00 	lds	r17, 0x0081	; 0x800081 <gu8_risetofall+0x1>
+ 56e:	20 e0       	ldi	r18, 0x00	; 0
+ 570:	30 e0       	ldi	r19, 0x00	; 0
+ 572:	fa 01       	movw	r30, r20
+ 574:	00 83       	st	Z, r16
+ 576:	11 83       	std	Z+1, r17	; 0x01
+ 578:	22 83       	std	Z+2, r18	; 0x02
+ 57a:	33 83       	std	Z+3, r19	; 0x03
+		       break;
+ 57c:	0d c0       	rjmp	.+26     	; 0x598 <Icu_ReadTime+0x6a>
+		 case ICU_FALE_TO_RISE:
+		      *Icu_Time=gu8_falltorise;
+ 57e:	00 91 7e 00 	lds	r16, 0x007E	; 0x80007e <gu8_falltorise>
+ 582:	10 91 7f 00 	lds	r17, 0x007F	; 0x80007f <gu8_falltorise+0x1>
+ 586:	20 e0       	ldi	r18, 0x00	; 0
+ 588:	30 e0       	ldi	r19, 0x00	; 0
+ 58a:	fa 01       	movw	r30, r20
+ 58c:	00 83       	st	Z, r16
+ 58e:	11 83       	std	Z+1, r17	; 0x01
+ 590:	22 83       	std	Z+2, r18	; 0x02
+ 592:	33 83       	std	Z+3, r19	; 0x03
+		      break;
+ 594:	01 c0       	rjmp	.+2      	; 0x598 <Icu_ReadTime+0x6a>
+		 default:
+		      ERROR=E_NOK;
+ 596:	81 e0       	ldi	r24, 0x01	; 1
+	 }
+	 
+	 
+	 
+	 return ERROR;
+ }
+ 598:	1f 91       	pop	r17
+ 59a:	0f 91       	pop	r16
+ 59c:	08 95       	ret
+
+0000059e <__vector_3>:
+ 
+ 
+ 
+ 
+ ISR(INT2_vect)
+{
+ 59e:	1f 92       	push	r1
+ 5a0:	0f 92       	push	r0
+ 5a2:	0f b6       	in	r0, 0x3f	; 63
+ 5a4:	0f 92       	push	r0
+ 5a6:	11 24       	eor	r1, r1
+ 5a8:	2f 93       	push	r18
+ 5aa:	3f 93       	push	r19
+ 5ac:	4f 93       	push	r20
+ 5ae:	5f 93       	push	r21
+ 5b0:	6f 93       	push	r22
+ 5b2:	7f 93       	push	r23
+ 5b4:	8f 93       	push	r24
+ 5b6:	9f 93       	push	r25
+ 5b8:	af 93       	push	r26
+ 5ba:	bf 93       	push	r27
+ 5bc:	ef 93       	push	r30
+ 5be:	ff 93       	push	r31
+
+	 if(gu8_Flag==0)
+ 5c0:	80 91 82 00 	lds	r24, 0x0082	; 0x800082 <gu8_Flag>
+ 5c4:	81 11       	cpse	r24, r1
+ 5c6:	0d c0       	rjmp	.+26     	; 0x5e2 <__vector_3+0x44>
+	  { /* gu8_risetorise=gu8_risetofall+gu8_falltorise;
+		 Timer_Stop(TIMER_0);
+		 Timer_GetValue(TIMER_0,&gu8_falltorise);
+		 Timer_SetValue(TIMER_0,0);*/
+		 Timer_Start(TIMER_0,0);	
+ 5c8:	60 e0       	ldi	r22, 0x00	; 0
+ 5ca:	70 e0       	ldi	r23, 0x00	; 0
+ 5cc:	52 d2       	rcall	.+1188   	; 0xa72 <Timer_Start>
+        	
+	     MCUCSR^=(1<<ISC2);
+ 5ce:	94 b7       	in	r25, 0x34	; 52
+ 5d0:	80 e4       	ldi	r24, 0x40	; 64
+ 5d2:	89 27       	eor	r24, r25
+ 5d4:	84 bf       	out	0x34, r24	; 52
+		 gu8_Flag++;	 
+ 5d6:	80 91 82 00 	lds	r24, 0x0082	; 0x800082 <gu8_Flag>
+ 5da:	8f 5f       	subi	r24, 0xFF	; 255
+ 5dc:	80 93 82 00 	sts	0x0082, r24	; 0x800082 <gu8_Flag>
+ 5e0:	0f c0       	rjmp	.+30     	; 0x600 <__vector_3+0x62>
+	 }
+	 else
+	 {
+		 Timer_Stop(TIMER_0);
+ 5e2:	80 e0       	ldi	r24, 0x00	; 0
+ 5e4:	5b d3       	rcall	.+1718   	; 0xc9c <Timer_Stop>
+		 gu8_risetofall=TCNT0;
+ 5e6:	82 b7       	in	r24, 0x32	; 50
+ 5e8:	90 e0       	ldi	r25, 0x00	; 0
+ 5ea:	90 93 81 00 	sts	0x0081, r25	; 0x800081 <gu8_risetofall+0x1>
+ 5ee:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <gu8_risetofall>
+       
+		/* Timer_SetValue(TIMER_0,0);
+		 Timer_Start(TIMER_0,0);*/
+       TCNT0=0;
+ 5f2:	12 be       	out	0x32, r1	; 50
+       gu8_Flag=0;
+ 5f4:	10 92 82 00 	sts	0x0082, r1	; 0x800082 <gu8_Flag>
+     	 MCUCSR^=(1<<ISC2);
+ 5f8:	94 b7       	in	r25, 0x34	; 52
+ 5fa:	80 e4       	ldi	r24, 0x40	; 64
+ 5fc:	89 27       	eor	r24, r25
+ 5fe:	84 bf       	out	0x34, r24	; 52
+		 
+	 }
+	 
+	 
+	 
+ 600:	ff 91       	pop	r31
+ 602:	ef 91       	pop	r30
+ 604:	bf 91       	pop	r27
+ 606:	af 91       	pop	r26
+ 608:	9f 91       	pop	r25
+ 60a:	8f 91       	pop	r24
+ 60c:	7f 91       	pop	r23
+ 60e:	6f 91       	pop	r22
+ 610:	5f 91       	pop	r21
+ 612:	4f 91       	pop	r20
+ 614:	3f 91       	pop	r19
+ 616:	2f 91       	pop	r18
+ 618:	0f 90       	pop	r0
+ 61a:	0f be       	out	0x3f, r0	; 63
+ 61c:	0f 90       	pop	r0
+ 61e:	1f 90       	pop	r1
+ 620:	18 95       	reti
+
+00000622 <Pwm_Init>:
+/* Return type : void                                                            */
+/*                                                                               */
+/* Description: initialize the PWM configuration                                 */
+/*********************************************************************************/
+ERROR_STATUS Pwm_Init(Pwm_Cfg_s *Pwm_Cfg)
+{   
+ 622:	0f 93       	push	r16
+ 624:	1f 93       	push	r17
+ 626:	cf 93       	push	r28
+ 628:	df 93       	push	r29
+ 62a:	00 d0       	rcall	.+0      	; 0x62c <Pwm_Init+0xa>
+ 62c:	1f 92       	push	r1
+ 62e:	cd b7       	in	r28, 0x3d	; 61
+ 630:	de b7       	in	r29, 0x3e	; 62
+ERROR_STATUS ERROR=E_OK;
+	if(Pwm_Cfg!=NULL)
+ 632:	00 97       	sbiw	r24, 0x00	; 0
+ 634:	09 f4       	brne	.+2      	; 0x638 <Pwm_Init+0x16>
+ 636:	b9 c0       	rjmp	.+370    	; 0x7aa <Pwm_Init+0x188>
+ 638:	8c 01       	movw	r16, r24
+	{		
+		switch (Pwm_Cfg->Channel)
+ 63a:	dc 01       	movw	r26, r24
+ 63c:	8c 91       	ld	r24, X
+ 63e:	81 30       	cpi	r24, 0x01	; 1
+ 640:	89 f1       	breq	.+98     	; 0x6a4 <Pwm_Init+0x82>
+ 642:	38 f0       	brcs	.+14     	; 0x652 <Pwm_Init+0x30>
+ 644:	82 30       	cpi	r24, 0x02	; 2
+ 646:	09 f4       	brne	.+2      	; 0x64a <Pwm_Init+0x28>
+ 648:	59 c0       	rjmp	.+178    	; 0x6fc <Pwm_Init+0xda>
+ 64a:	83 30       	cpi	r24, 0x03	; 3
+ 64c:	09 f4       	brne	.+2      	; 0x650 <Pwm_Init+0x2e>
+ 64e:	82 c0       	rjmp	.+260    	; 0x754 <Pwm_Init+0x132>
+ 650:	aa c0       	rjmp	.+340    	; 0x7a6 <Pwm_Init+0x184>
+		{
+			case (PWM_CH0):
+					/* Set Mode 1 (Phase correct) */
+					TCCR0 |= WGM00;
+ 652:	83 b7       	in	r24, 0x33	; 51
+ 654:	80 64       	ori	r24, 0x40	; 64
+ 656:	83 bf       	out	0x33, r24	; 51
+					TCCR0 &= ~WGM01;
+ 658:	83 b7       	in	r24, 0x33	; 51
+ 65a:	87 7f       	andi	r24, 0xF7	; 247
+ 65c:	83 bf       	out	0x33, r24	; 51
+					/* Non-inverting */
+					TCCR0 |= COM01;
+ 65e:	83 b7       	in	r24, 0x33	; 51
+ 660:	80 62       	ori	r24, 0x20	; 32
+ 662:	83 bf       	out	0x33, r24	; 51
+					TCCR0 &= ~COM00;
+ 664:	83 b7       	in	r24, 0x33	; 51
+ 666:	8f 7e       	andi	r24, 0xEF	; 239
+ 668:	83 bf       	out	0x33, r24	; 51
+					/* Set OC0 as digital output */
+					DIO_Cfg_s ST_OC0_dio = {0};
+					ST_OC0_dio.GPIO = GPIOB;
+ 66a:	81 e0       	ldi	r24, 0x01	; 1
+ 66c:	89 83       	std	Y+1, r24	; 0x01
+					ST_OC0_dio.dir = OUTPUT;
+ 66e:	8f ef       	ldi	r24, 0xFF	; 255
+ 670:	8b 83       	std	Y+3, r24	; 0x03
+					ST_OC0_dio.pins = PIN3;
+ 672:	88 e0       	ldi	r24, 0x08	; 8
+ 674:	8a 83       	std	Y+2, r24	; 0x02
+					if(DIO_init(&ST_OC0_dio) == E_OK)
+ 676:	ce 01       	movw	r24, r28
+ 678:	01 96       	adiw	r24, 0x01	; 1
+ 67a:	42 dd       	rcall	.-1404   	; 0x100 <DIO_init>
+/*                                                                               */
+/* Description: initialize the PWM configuration                                 */
+/*********************************************************************************/
+ERROR_STATUS Pwm_Init(Pwm_Cfg_s *Pwm_Cfg)
+{   
+ERROR_STATUS ERROR=E_OK;
+ 67c:	91 e0       	ldi	r25, 0x01	; 1
+ 67e:	81 11       	cpse	r24, r1
+ 680:	01 c0       	rjmp	.+2      	; 0x684 <Pwm_Init+0x62>
+ 682:	90 e0       	ldi	r25, 0x00	; 0
+					}
+					else
+					{
+						ERROR=E_NOK;
+					}
+					gsau8_preScaler[Pwm_Cfg->Channel] = Pwm_Cfg->Prescaler;
+ 684:	f8 01       	movw	r30, r16
+ 686:	20 81       	ld	r18, Z
+ 688:	30 e0       	ldi	r19, 0x00	; 0
+ 68a:	f9 01       	movw	r30, r18
+ 68c:	e9 57       	subi	r30, 0x79	; 121
+ 68e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 690:	d8 01       	movw	r26, r16
+ 692:	11 96       	adiw	r26, 0x01	; 1
+ 694:	8c 91       	ld	r24, X
+ 696:	80 83       	st	Z, r24
+					gsau8_initState[Pwm_Cfg->Channel] = INITIALIZED;
+ 698:	f9 01       	movw	r30, r18
+ 69a:	ed 57       	subi	r30, 0x7D	; 125
+ 69c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 69e:	81 e0       	ldi	r24, 0x01	; 1
+ 6a0:	80 83       	st	Z, r24
+					break;
+ 6a2:	84 c0       	rjmp	.+264    	; 0x7ac <Pwm_Init+0x18a>
+			case (PWM_CH1A):
+					/* Set Mode 8 (Phase and frequency correct) */
+					TCCR1A &= ~(WGM11 | WGM10);
+ 6a4:	8f b5       	in	r24, 0x2f	; 47
+ 6a6:	8c 7f       	andi	r24, 0xFC	; 252
+ 6a8:	8f bd       	out	0x2f, r24	; 47
+					TCCR1B |= WGM13;
+ 6aa:	8e b5       	in	r24, 0x2e	; 46
+ 6ac:	80 61       	ori	r24, 0x10	; 16
+ 6ae:	8e bd       	out	0x2e, r24	; 46
+					TCCR1B &= ~WGM12;
+ 6b0:	8e b5       	in	r24, 0x2e	; 46
+ 6b2:	87 7f       	andi	r24, 0xF7	; 247
+ 6b4:	8e bd       	out	0x2e, r24	; 46
+					/* Non-inverting */
+					TCCR1A |= COM1A1;
+ 6b6:	8f b5       	in	r24, 0x2f	; 47
+ 6b8:	80 68       	ori	r24, 0x80	; 128
+ 6ba:	8f bd       	out	0x2f, r24	; 47
+					TCCR1A &= ~COM1A0;
+ 6bc:	8f b5       	in	r24, 0x2f	; 47
+ 6be:	8f 7b       	andi	r24, 0xBF	; 191
+ 6c0:	8f bd       	out	0x2f, r24	; 47
+					/* Set OC0 as digital output */
+					DIO_Cfg_s ST_OC1A_dio = {0};
+					ST_OC1A_dio.GPIO = GPIOD;
+ 6c2:	83 e0       	ldi	r24, 0x03	; 3
+ 6c4:	89 83       	std	Y+1, r24	; 0x01
+					ST_OC1A_dio.dir = OUTPUT;
+ 6c6:	8f ef       	ldi	r24, 0xFF	; 255
+ 6c8:	8b 83       	std	Y+3, r24	; 0x03
+					ST_OC1A_dio.pins = PIN5;
+ 6ca:	80 e2       	ldi	r24, 0x20	; 32
+ 6cc:	8a 83       	std	Y+2, r24	; 0x02
+					if(DIO_init(&ST_OC1A_dio) == E_OK)
+ 6ce:	ce 01       	movw	r24, r28
+ 6d0:	01 96       	adiw	r24, 0x01	; 1
+ 6d2:	16 dd       	rcall	.-1492   	; 0x100 <DIO_init>
+/*                                                                               */
+/* Description: initialize the PWM configuration                                 */
+/*********************************************************************************/
+ERROR_STATUS Pwm_Init(Pwm_Cfg_s *Pwm_Cfg)
+{   
+ERROR_STATUS ERROR=E_OK;
+ 6d4:	91 e0       	ldi	r25, 0x01	; 1
+ 6d6:	81 11       	cpse	r24, r1
+ 6d8:	01 c0       	rjmp	.+2      	; 0x6dc <Pwm_Init+0xba>
+ 6da:	90 e0       	ldi	r25, 0x00	; 0
+					else
+					{
+						ERROR=E_NOK;
+					}
+					/* Store Prescaler for the Pwm_Start function */
+					gsau8_preScaler[Pwm_Cfg->Channel] = Pwm_Cfg->Prescaler;
+ 6dc:	f8 01       	movw	r30, r16
+ 6de:	20 81       	ld	r18, Z
+ 6e0:	30 e0       	ldi	r19, 0x00	; 0
+ 6e2:	f9 01       	movw	r30, r18
+ 6e4:	e9 57       	subi	r30, 0x79	; 121
+ 6e6:	ff 4f       	sbci	r31, 0xFF	; 255
+ 6e8:	d8 01       	movw	r26, r16
+ 6ea:	11 96       	adiw	r26, 0x01	; 1
+ 6ec:	8c 91       	ld	r24, X
+ 6ee:	80 83       	st	Z, r24
+					gsau8_initState[Pwm_Cfg->Channel] = INITIALIZED;
+ 6f0:	f9 01       	movw	r30, r18
+ 6f2:	ed 57       	subi	r30, 0x7D	; 125
+ 6f4:	ff 4f       	sbci	r31, 0xFF	; 255
+ 6f6:	81 e0       	ldi	r24, 0x01	; 1
+ 6f8:	80 83       	st	Z, r24
+					break;
+ 6fa:	58 c0       	rjmp	.+176    	; 0x7ac <Pwm_Init+0x18a>
+			case (PWM_CH1B):
+					/* Set Mode 8 (Phase and frequency correct) */
+					TCCR1A &= ~(WGM11 | WGM10);
+ 6fc:	8f b5       	in	r24, 0x2f	; 47
+ 6fe:	8c 7f       	andi	r24, 0xFC	; 252
+ 700:	8f bd       	out	0x2f, r24	; 47
+					TCCR1B |= WGM13;
+ 702:	8e b5       	in	r24, 0x2e	; 46
+ 704:	80 61       	ori	r24, 0x10	; 16
+ 706:	8e bd       	out	0x2e, r24	; 46
+					TCCR1B &= ~WGM12;
+ 708:	8e b5       	in	r24, 0x2e	; 46
+ 70a:	87 7f       	andi	r24, 0xF7	; 247
+ 70c:	8e bd       	out	0x2e, r24	; 46
+					/* Non-inverting */
+					TCCR1A |= COM1B1;
+ 70e:	8f b5       	in	r24, 0x2f	; 47
+ 710:	80 62       	ori	r24, 0x20	; 32
+ 712:	8f bd       	out	0x2f, r24	; 47
+					TCCR1A &= ~COM1B0;
+ 714:	8f b5       	in	r24, 0x2f	; 47
+ 716:	8f 7e       	andi	r24, 0xEF	; 239
+ 718:	8f bd       	out	0x2f, r24	; 47
+					/* Set OC0 as digital output */
+					DIO_Cfg_s ST_OC1B_DIO;
+					ST_OC1B_DIO.GPIO = GPIOD;
+ 71a:	83 e0       	ldi	r24, 0x03	; 3
+ 71c:	89 83       	std	Y+1, r24	; 0x01
+					ST_OC1B_DIO.dir = OUTPUT;
+ 71e:	8f ef       	ldi	r24, 0xFF	; 255
+ 720:	8b 83       	std	Y+3, r24	; 0x03
+					ST_OC1B_DIO.pins = PIN4;
+ 722:	80 e1       	ldi	r24, 0x10	; 16
+ 724:	8a 83       	std	Y+2, r24	; 0x02
+					if(DIO_init(&ST_OC1B_DIO) == E_OK)
+ 726:	ce 01       	movw	r24, r28
+ 728:	01 96       	adiw	r24, 0x01	; 1
+ 72a:	ea dc       	rcall	.-1580   	; 0x100 <DIO_init>
+/*                                                                               */
+/* Description: initialize the PWM configuration                                 */
+/*********************************************************************************/
+ERROR_STATUS Pwm_Init(Pwm_Cfg_s *Pwm_Cfg)
+{   
+ERROR_STATUS ERROR=E_OK;
+ 72c:	91 e0       	ldi	r25, 0x01	; 1
+ 72e:	81 11       	cpse	r24, r1
+ 730:	01 c0       	rjmp	.+2      	; 0x734 <Pwm_Init+0x112>
+ 732:	90 e0       	ldi	r25, 0x00	; 0
+					{
+						ERROR=E_NOK;
+					}
+
+					/* Store Prescaler for the Pwm_Start function */
+					gsau8_preScaler[Pwm_Cfg->Channel] = Pwm_Cfg->Prescaler;
+ 734:	f8 01       	movw	r30, r16
+ 736:	20 81       	ld	r18, Z
+ 738:	30 e0       	ldi	r19, 0x00	; 0
+ 73a:	f9 01       	movw	r30, r18
+ 73c:	e9 57       	subi	r30, 0x79	; 121
+ 73e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 740:	d8 01       	movw	r26, r16
+ 742:	11 96       	adiw	r26, 0x01	; 1
+ 744:	8c 91       	ld	r24, X
+ 746:	80 83       	st	Z, r24
+					gsau8_initState[Pwm_Cfg->Channel] = INITIALIZED;
+ 748:	f9 01       	movw	r30, r18
+ 74a:	ed 57       	subi	r30, 0x7D	; 125
+ 74c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 74e:	81 e0       	ldi	r24, 0x01	; 1
+ 750:	80 83       	st	Z, r24
+					break;
+ 752:	2c c0       	rjmp	.+88     	; 0x7ac <Pwm_Init+0x18a>
+			case (PWM_CH2):
+					/* Set Mode 1 (Phase correct) */
+					TCCR2 |= WGM20;
+ 754:	85 b5       	in	r24, 0x25	; 37
+ 756:	80 64       	ori	r24, 0x40	; 64
+ 758:	85 bd       	out	0x25, r24	; 37
+					TCCR2 &= ~WGM21;
+ 75a:	85 b5       	in	r24, 0x25	; 37
+ 75c:	87 7f       	andi	r24, 0xF7	; 247
+ 75e:	85 bd       	out	0x25, r24	; 37
+					/* Non-inverting */
+					TCCR2 |= COM21;
+ 760:	85 b5       	in	r24, 0x25	; 37
+ 762:	80 62       	ori	r24, 0x20	; 32
+ 764:	85 bd       	out	0x25, r24	; 37
+					TCCR2 &= ~COM20;
+ 766:	85 b5       	in	r24, 0x25	; 37
+ 768:	8f 7e       	andi	r24, 0xEF	; 239
+ 76a:	85 bd       	out	0x25, r24	; 37
+					/* Set OC0 as digital output */
+					DIO_Cfg_s ST_OC2_dio = {0};
+					ST_OC2_dio.GPIO = GPIOD;
+ 76c:	83 e0       	ldi	r24, 0x03	; 3
+ 76e:	89 83       	std	Y+1, r24	; 0x01
+					ST_OC2_dio.dir = OUTPUT;
+ 770:	8f ef       	ldi	r24, 0xFF	; 255
+ 772:	8b 83       	std	Y+3, r24	; 0x03
+					ST_OC2_dio.pins = PIN7;
+ 774:	80 e8       	ldi	r24, 0x80	; 128
+					if(DIO_init(&ST_OC2_dio) == E_OK)
+ 776:	8a 83       	std	Y+2, r24	; 0x02
+ 778:	ce 01       	movw	r24, r28
+ 77a:	01 96       	adiw	r24, 0x01	; 1
+ 77c:	c1 dc       	rcall	.-1662   	; 0x100 <DIO_init>
+/*                                                                               */
+/* Description: initialize the PWM configuration                                 */
+/*********************************************************************************/
+ERROR_STATUS Pwm_Init(Pwm_Cfg_s *Pwm_Cfg)
+{   
+ERROR_STATUS ERROR=E_OK;
+ 77e:	91 e0       	ldi	r25, 0x01	; 1
+ 780:	81 11       	cpse	r24, r1
+ 782:	01 c0       	rjmp	.+2      	; 0x786 <Pwm_Init+0x164>
+ 784:	90 e0       	ldi	r25, 0x00	; 0
+					else
+					{
+						ERROR=E_NOK;
+					}
+					/* Store Prescaler for the Pwm_Start function */
+					gsau8_preScaler[Pwm_Cfg->Channel] = Pwm_Cfg->Prescaler;
+ 786:	f8 01       	movw	r30, r16
+ 788:	20 81       	ld	r18, Z
+ 78a:	30 e0       	ldi	r19, 0x00	; 0
+ 78c:	f9 01       	movw	r30, r18
+ 78e:	e9 57       	subi	r30, 0x79	; 121
+ 790:	ff 4f       	sbci	r31, 0xFF	; 255
+ 792:	d8 01       	movw	r26, r16
+ 794:	11 96       	adiw	r26, 0x01	; 1
+ 796:	8c 91       	ld	r24, X
+ 798:	80 83       	st	Z, r24
+					gsau8_initState[Pwm_Cfg->Channel] = INITIALIZED;				
+ 79a:	f9 01       	movw	r30, r18
+ 79c:	ed 57       	subi	r30, 0x7D	; 125
+ 79e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 7a0:	81 e0       	ldi	r24, 0x01	; 1
+ 7a2:	80 83       	st	Z, r24
+					break;
+ 7a4:	03 c0       	rjmp	.+6      	; 0x7ac <Pwm_Init+0x18a>
+		default:
+				ERROR=E_NOK;
+ 7a6:	91 e0       	ldi	r25, 0x01	; 1
+ 7a8:	01 c0       	rjmp	.+2      	; 0x7ac <Pwm_Init+0x18a>
+				break;
+	}
+ }
+ else
+ {
+	 ERROR=E_NOK;
+ 7aa:	91 e0       	ldi	r25, 0x01	; 1
+ }
+return ERROR;
+}
+ 7ac:	89 2f       	mov	r24, r25
+ 7ae:	0f 90       	pop	r0
+ 7b0:	0f 90       	pop	r0
+ 7b2:	0f 90       	pop	r0
+ 7b4:	df 91       	pop	r29
+ 7b6:	cf 91       	pop	r28
+ 7b8:	1f 91       	pop	r17
+ 7ba:	0f 91       	pop	r16
+ 7bc:	08 95       	ret
+
+000007be <Pwm_Start>:
+/*-------------------------------------------------------                        */
+/*((all this calculations are for phase correct mode))                           */
+/*all this calculation for F_CPU 16MHz                                           */
+/*********************************************************************************/
+ERROR_STATUS Pwm_Start(uint8_t channel,uint8_t Duty,uint32_t Frequncy)
+{
+ 7be:	cf 92       	push	r12
+ 7c0:	df 92       	push	r13
+ 7c2:	ef 92       	push	r14
+ 7c4:	ff 92       	push	r15
+ 7c6:	0f 93       	push	r16
+ 7c8:	1f 93       	push	r17
+ 7ca:	cf 93       	push	r28
+ 7cc:	c6 2f       	mov	r28, r22
+ 7ce:	69 01       	movw	r12, r18
+ 7d0:	7a 01       	movw	r14, r20
+ERROR_STATUS ERROR=E_OK;	
+	switch (channel)
+ 7d2:	81 30       	cpi	r24, 0x01	; 1
+ 7d4:	09 f4       	brne	.+2      	; 0x7d8 <Pwm_Start+0x1a>
+ 7d6:	3f c0       	rjmp	.+126    	; 0x856 <Pwm_Start+0x98>
+ 7d8:	38 f0       	brcs	.+14     	; 0x7e8 <Pwm_Start+0x2a>
+ 7da:	82 30       	cpi	r24, 0x02	; 2
+ 7dc:	09 f4       	brne	.+2      	; 0x7e0 <Pwm_Start+0x22>
+ 7de:	76 c0       	rjmp	.+236    	; 0x8cc <__stack+0x6d>
+ 7e0:	83 30       	cpi	r24, 0x03	; 3
+ 7e2:	09 f4       	brne	.+2      	; 0x7e6 <Pwm_Start+0x28>
+ 7e4:	a9 c0       	rjmp	.+338    	; 0x938 <__stack+0xd9>
+ 7e6:	bf c0       	rjmp	.+382    	; 0x966 <__stack+0x107>
+	{
+		case (PWM_CH0):
+		      /* Check if PWM channel is initialized or not */
+		      if(gsau8_initState[channel] == INITIALIZED)
+ 7e8:	80 91 83 00 	lds	r24, 0x0083	; 0x800083 <gsau8_initState>
+ 7ec:	81 30       	cpi	r24, 0x01	; 1
+ 7ee:	09 f0       	breq	.+2      	; 0x7f2 <Pwm_Start+0x34>
+ 7f0:	bc c0       	rjmp	.+376    	; 0x96a <__stack+0x10b>
+		      {
+			      /* Equation of Duty cycle */
+			      uint32_t u32_F_Calculated = (F_CPU / (gsau8_prescaler_calc_LUT[gsau8_preScaler[channel]] * 510));
+ 7f2:	e0 91 87 00 	lds	r30, 0x0087	; 0x800087 <gsau8_preScaler>
+ 7f6:	f0 e0       	ldi	r31, 0x00	; 0
+ 7f8:	ee 0f       	add	r30, r30
+ 7fa:	ff 1f       	adc	r31, r31
+ 7fc:	e2 59       	subi	r30, 0x92	; 146
+ 7fe:	ff 4f       	sbci	r31, 0xFF	; 255
+/*((all this calculations are for phase correct mode))                           */
+/*all this calculation for F_CPU 16MHz                                           */
+/*********************************************************************************/
+ERROR_STATUS Pwm_Start(uint8_t channel,uint8_t Duty,uint32_t Frequncy)
+{
+ERROR_STATUS ERROR=E_OK;	
+ 800:	40 81       	ld	r20, Z
+ 802:	51 81       	ldd	r21, Z+1	; 0x01
+ 804:	8e ef       	ldi	r24, 0xFE	; 254
+ 806:	91 e0       	ldi	r25, 0x01	; 1
+ 808:	48 9f       	mul	r20, r24
+ 80a:	90 01       	movw	r18, r0
+ 80c:	49 9f       	mul	r20, r25
+ 80e:	30 0d       	add	r19, r0
+ 810:	58 9f       	mul	r21, r24
+ 812:	30 0d       	add	r19, r0
+ 814:	11 24       	eor	r1, r1
+ 816:	40 e0       	ldi	r20, 0x00	; 0
+ 818:	50 e0       	ldi	r21, 0x00	; 0
+ 81a:	60 e0       	ldi	r22, 0x00	; 0
+ 81c:	74 e2       	ldi	r23, 0x24	; 36
+ 81e:	84 ef       	ldi	r24, 0xF4	; 244
+ 820:	90 e0       	ldi	r25, 0x00	; 0
+ 822:	3b d3       	rcall	.+1654   	; 0xe9a <__udivmodsi4>
+ 824:	11 e0       	ldi	r17, 0x01	; 1
+ 826:	2c 15       	cp	r18, r12
+ 828:	3d 05       	cpc	r19, r13
+ 82a:	4e 05       	cpc	r20, r14
+ 82c:	5f 05       	cpc	r21, r15
+ 82e:	09 f4       	brne	.+2      	; 0x832 <Pwm_Start+0x74>
+ 830:	10 e0       	ldi	r17, 0x00	; 0
+			      /* Equation of Duty cycle */
+			      uint32_t u32_F_Calculated = (F_CPU / (gsau8_prescaler_calc_LUT[gsau8_preScaler[channel]] * 510));
+			      if(u32_F_Calculated!=Frequncy)
+			       ERROR=E_NOK;
+			      /* Calculating duty ratio */		
+			      OCR0 = (Duty * 0xFF) / 100;
+ 832:	2f ef       	ldi	r18, 0xFF	; 255
+ 834:	c2 9f       	mul	r28, r18
+ 836:	c0 01       	movw	r24, r0
+ 838:	11 24       	eor	r1, r1
+ 83a:	64 e6       	ldi	r22, 0x64	; 100
+ 83c:	70 e0       	ldi	r23, 0x00	; 0
+ 83e:	1a d3       	rcall	.+1588   	; 0xe74 <__divmodhi4>
+ 840:	6c bf       	out	0x3c, r22	; 60
+			      /* Starting PWM channel */
+			      TCCR0 |= gsau8_prescaler_0_1_LUT[gsau8_preScaler[channel]];
+ 842:	93 b7       	in	r25, 0x33	; 51
+ 844:	e0 91 87 00 	lds	r30, 0x0087	; 0x800087 <gsau8_preScaler>
+ 848:	f0 e0       	ldi	r31, 0x00	; 0
+ 84a:	e9 59       	subi	r30, 0x99	; 153
+ 84c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 84e:	80 81       	ld	r24, Z
+ 850:	89 2b       	or	r24, r25
+ 852:	83 bf       	out	0x33, r24	; 51
+ 854:	91 c0       	rjmp	.+290    	; 0x978 <__stack+0x119>
+			      ERROR=E_NOK;
+		      }
+		      break;
+		case (PWM_CH1A):
+				/* Check if PWM channel is initialized or not */
+				if(gsau8_initState[channel] == INITIALIZED)
+ 856:	80 91 84 00 	lds	r24, 0x0084	; 0x800084 <gsau8_initState+0x1>
+ 85a:	81 30       	cpi	r24, 0x01	; 1
+ 85c:	09 f0       	breq	.+2      	; 0x860 <__stack+0x1>
+ 85e:	87 c0       	rjmp	.+270    	; 0x96e <__stack+0x10f>
+				{
+					/* Non-inverting */
+					TCCR1A |= COM1A1;
+ 860:	8f b5       	in	r24, 0x2f	; 47
+ 862:	80 68       	ori	r24, 0x80	; 128
+ 864:	8f bd       	out	0x2f, r24	; 47
+					TCCR1A &= ~COM1A0;
+ 866:	8f b5       	in	r24, 0x2f	; 47
+ 868:	8f 7b       	andi	r24, 0xBF	; 191
+ 86a:	8f bd       	out	0x2f, r24	; 47
+					/* Equation of Duty cycle */
+					uint16_t u16_F_Calculated = (F_CPU / (2 * gsau8_prescaler_calc_LUT[gsau8_preScaler[channel]] * Frequncy));
+ 86c:	07 e8       	ldi	r16, 0x87	; 135
+ 86e:	10 e0       	ldi	r17, 0x00	; 0
+ 870:	d8 01       	movw	r26, r16
+ 872:	11 96       	adiw	r26, 0x01	; 1
+ 874:	ec 91       	ld	r30, X
+ 876:	f0 e0       	ldi	r31, 0x00	; 0
+ 878:	ee 0f       	add	r30, r30
+ 87a:	ff 1f       	adc	r31, r31
+ 87c:	e2 59       	subi	r30, 0x92	; 146
+ 87e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 880:	a0 81       	ld	r26, Z
+ 882:	b1 81       	ldd	r27, Z+1	; 0x01
+ 884:	aa 0f       	add	r26, r26
+ 886:	bb 1f       	adc	r27, r27
+ 888:	3f d3       	rcall	.+1662   	; 0xf08 <__muluhisi3>
+ 88a:	9b 01       	movw	r18, r22
+ 88c:	ac 01       	movw	r20, r24
+ 88e:	60 e0       	ldi	r22, 0x00	; 0
+ 890:	74 e2       	ldi	r23, 0x24	; 36
+ 892:	84 ef       	ldi	r24, 0xF4	; 244
+ 894:	90 e0       	ldi	r25, 0x00	; 0
+ 896:	01 d3       	rcall	.+1538   	; 0xe9a <__udivmodsi4>
+					ICR1 = u16_F_Calculated;
+ 898:	37 bd       	out	0x27, r19	; 39
+ 89a:	26 bd       	out	0x26, r18	; 38
+
+					/* Calculating duty ratio */
+					uint32_t DutyRatio = (((uint32_t)Duty * (uint32_t)ICR1) / 100);
+ 89c:	a6 b5       	in	r26, 0x26	; 38
+					OCR1A = (uint16_t) DutyRatio;
+ 89e:	b7 b5       	in	r27, 0x27	; 39
+ 8a0:	2c 2f       	mov	r18, r28
+ 8a2:	30 e0       	ldi	r19, 0x00	; 0
+ 8a4:	22 d3       	rcall	.+1604   	; 0xeea <__umulhisi3>
+ 8a6:	24 e6       	ldi	r18, 0x64	; 100
+ 8a8:	30 e0       	ldi	r19, 0x00	; 0
+ 8aa:	40 e0       	ldi	r20, 0x00	; 0
+ 8ac:	50 e0       	ldi	r21, 0x00	; 0
+ 8ae:	f5 d2       	rcall	.+1514   	; 0xe9a <__udivmodsi4>
+ 8b0:	3b bd       	out	0x2b, r19	; 43
+ 8b2:	2a bd       	out	0x2a, r18	; 42
+
+					/* Starting PWM channel */
+					TCCR1B |= gsau8_prescaler_0_1_LUT[gsau8_preScaler[channel]];
+ 8b4:	9e b5       	in	r25, 0x2e	; 46
+ 8b6:	d8 01       	movw	r26, r16
+ 8b8:	11 96       	adiw	r26, 0x01	; 1
+ 8ba:	ec 91       	ld	r30, X
+ 8bc:	f0 e0       	ldi	r31, 0x00	; 0
+ 8be:	e9 59       	subi	r30, 0x99	; 153
+ 8c0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 8c2:	80 81       	ld	r24, Z
+ 8c4:	89 2b       	or	r24, r25
+ 8c6:	8e bd       	out	0x2e, r24	; 46
+/*((all this calculations are for phase correct mode))                           */
+/*all this calculation for F_CPU 16MHz                                           */
+/*********************************************************************************/
+ERROR_STATUS Pwm_Start(uint8_t channel,uint8_t Duty,uint32_t Frequncy)
+{
+ERROR_STATUS ERROR=E_OK;	
+ 8c8:	10 e0       	ldi	r17, 0x00	; 0
+ 8ca:	56 c0       	rjmp	.+172    	; 0x978 <__stack+0x119>
+					ERROR=E_NOK;
+				}
+				break;
+		case (PWM_CH1B):
+				/* Check if PWM channel is initialized or not */
+				if(gsau8_initState[channel] == INITIALIZED)
+ 8cc:	80 91 85 00 	lds	r24, 0x0085	; 0x800085 <gsau8_initState+0x2>
+ 8d0:	81 30       	cpi	r24, 0x01	; 1
+ 8d2:	09 f0       	breq	.+2      	; 0x8d6 <__stack+0x77>
+ 8d4:	4e c0       	rjmp	.+156    	; 0x972 <__stack+0x113>
+				{
+					/* Non-inverting */
+					TCCR1A |= COM1B1;
+ 8d6:	8f b5       	in	r24, 0x2f	; 47
+ 8d8:	80 62       	ori	r24, 0x20	; 32
+ 8da:	8f bd       	out	0x2f, r24	; 47
+					TCCR1A &= ~COM1B0;
+ 8dc:	8f b5       	in	r24, 0x2f	; 47
+ 8de:	8f 7e       	andi	r24, 0xEF	; 239
+ 8e0:	8f bd       	out	0x2f, r24	; 47
+					/* Equation from data sheet of ATmega32 */
+					uint16_t u16_F_Calculated = (F_CPU / (2 * gsau8_prescaler_calc_LUT[gsau8_preScaler[channel]] * Frequncy));
+ 8e2:	00 91 89 00 	lds	r16, 0x0089	; 0x800089 <gsau8_preScaler+0x2>
+ 8e6:	10 e0       	ldi	r17, 0x00	; 0
+ 8e8:	f8 01       	movw	r30, r16
+ 8ea:	ee 0f       	add	r30, r30
+ 8ec:	ff 1f       	adc	r31, r31
+ 8ee:	e2 59       	subi	r30, 0x92	; 146
+ 8f0:	ff 4f       	sbci	r31, 0xFF	; 255
+ 8f2:	a0 81       	ld	r26, Z
+ 8f4:	b1 81       	ldd	r27, Z+1	; 0x01
+ 8f6:	aa 0f       	add	r26, r26
+ 8f8:	bb 1f       	adc	r27, r27
+ 8fa:	06 d3       	rcall	.+1548   	; 0xf08 <__muluhisi3>
+ 8fc:	9b 01       	movw	r18, r22
+ 8fe:	ac 01       	movw	r20, r24
+ 900:	60 e0       	ldi	r22, 0x00	; 0
+ 902:	74 e2       	ldi	r23, 0x24	; 36
+ 904:	84 ef       	ldi	r24, 0xF4	; 244
+ 906:	90 e0       	ldi	r25, 0x00	; 0
+ 908:	c8 d2       	rcall	.+1424   	; 0xe9a <__udivmodsi4>
+					ICR1 = u16_F_Calculated;
+ 90a:	37 bd       	out	0x27, r19	; 39
+ 90c:	26 bd       	out	0x26, r18	; 38
+
+					/* Calculating duty ratio */
+					uint32_t DutyRatio = (((uint32_t)Duty * (uint32_t)ICR1) / 100);
+ 90e:	a6 b5       	in	r26, 0x26	; 38
+					OCR1B = (uint16_t) DutyRatio;
+ 910:	b7 b5       	in	r27, 0x27	; 39
+ 912:	2c 2f       	mov	r18, r28
+ 914:	30 e0       	ldi	r19, 0x00	; 0
+ 916:	e9 d2       	rcall	.+1490   	; 0xeea <__umulhisi3>
+ 918:	24 e6       	ldi	r18, 0x64	; 100
+ 91a:	30 e0       	ldi	r19, 0x00	; 0
+ 91c:	40 e0       	ldi	r20, 0x00	; 0
+ 91e:	50 e0       	ldi	r21, 0x00	; 0
+ 920:	bc d2       	rcall	.+1400   	; 0xe9a <__udivmodsi4>
+ 922:	39 bd       	out	0x29, r19	; 41
+ 924:	28 bd       	out	0x28, r18	; 40
+ 926:	9e b5       	in	r25, 0x2e	; 46
+
+					/* Starting PWM channel */
+					TCCR1B |= gsau8_prescaler_0_1_LUT[gsau8_preScaler[channel]];
+ 928:	f8 01       	movw	r30, r16
+ 92a:	e9 59       	subi	r30, 0x99	; 153
+ 92c:	ff 4f       	sbci	r31, 0xFF	; 255
+ 92e:	80 81       	ld	r24, Z
+ 930:	89 2b       	or	r24, r25
+ 932:	8e bd       	out	0x2e, r24	; 46
+ 934:	10 e0       	ldi	r17, 0x00	; 0
+/*((all this calculations are for phase correct mode))                           */
+/*all this calculation for F_CPU 16MHz                                           */
+/*********************************************************************************/
+ERROR_STATUS Pwm_Start(uint8_t channel,uint8_t Duty,uint32_t Frequncy)
+{
+ERROR_STATUS ERROR=E_OK;	
+ 936:	20 c0       	rjmp	.+64     	; 0x978 <__stack+0x119>
+ 938:	80 91 86 00 	lds	r24, 0x0086	; 0x800086 <gsau8_initState+0x3>
+					ERROR=E_NOK;
+				}
+				break;
+		case (PWM_CH2):
+				/* Check if PWM channel is initialized or not */
+				if(gsau8_initState[channel] == INITIALIZED)
+ 93c:	81 30       	cpi	r24, 0x01	; 1
+ 93e:	d9 f4       	brne	.+54     	; 0x976 <__stack+0x117>
+				{
+					/* Calculating duty ratio */
+					OCR2 = (Duty * 0xFF) / 100;
+ 940:	bf ef       	ldi	r27, 0xFF	; 255
+ 942:	6b 9f       	mul	r22, r27
+ 944:	c0 01       	movw	r24, r0
+ 946:	11 24       	eor	r1, r1
+ 948:	64 e6       	ldi	r22, 0x64	; 100
+ 94a:	70 e0       	ldi	r23, 0x00	; 0
+ 94c:	93 d2       	rcall	.+1318   	; 0xe74 <__divmodhi4>
+ 94e:	63 bd       	out	0x23, r22	; 35
+ 950:	95 b5       	in	r25, 0x25	; 37
+
+					/* Starting PWM channel */
+					TCCR2 |= gsau8_prescaler_2_LUT[gsau8_preScaler[channel]];
+ 952:	e0 91 8a 00 	lds	r30, 0x008A	; 0x80008a <gsau8_preScaler+0x3>
+ 956:	f0 e0       	ldi	r31, 0x00	; 0
+ 958:	e0 5a       	subi	r30, 0xA0	; 160
+ 95a:	ff 4f       	sbci	r31, 0xFF	; 255
+ 95c:	80 81       	ld	r24, Z
+ 95e:	89 2b       	or	r24, r25
+ 960:	85 bd       	out	0x25, r24	; 37
+ 962:	10 e0       	ldi	r17, 0x00	; 0
+/*((all this calculations are for phase correct mode))                           */
+/*all this calculation for F_CPU 16MHz                                           */
+/*********************************************************************************/
+ERROR_STATUS Pwm_Start(uint8_t channel,uint8_t Duty,uint32_t Frequncy)
+{
+ERROR_STATUS ERROR=E_OK;	
+ 964:	09 c0       	rjmp	.+18     	; 0x978 <__stack+0x119>
+ 966:	11 e0       	ldi	r17, 0x01	; 1
+				{
+					ERROR=E_NOK;
+				}
+				break;
+		default:
+				ERROR=E_NOK;
+ 968:	07 c0       	rjmp	.+14     	; 0x978 <__stack+0x119>
+ 96a:	11 e0       	ldi	r17, 0x01	; 1
+			      /* Starting PWM channel */
+			      TCCR0 |= gsau8_prescaler_0_1_LUT[gsau8_preScaler[channel]];
+		      }
+		      else
+		      {
+			      ERROR=E_NOK;
+ 96c:	05 c0       	rjmp	.+10     	; 0x978 <__stack+0x119>
+ 96e:	11 e0       	ldi	r17, 0x01	; 1
+					/* Starting PWM channel */
+					TCCR1B |= gsau8_prescaler_0_1_LUT[gsau8_preScaler[channel]];
+				}
+				else
+				{
+					ERROR=E_NOK;
+ 970:	03 c0       	rjmp	.+6      	; 0x978 <__stack+0x119>
+ 972:	11 e0       	ldi	r17, 0x01	; 1
+					/* Starting PWM channel */
+					TCCR1B |= gsau8_prescaler_0_1_LUT[gsau8_preScaler[channel]];
+				}
+				else
+				{
+					ERROR=E_NOK;
+ 974:	01 c0       	rjmp	.+2      	; 0x978 <__stack+0x119>
+ 976:	11 e0       	ldi	r17, 0x01	; 1
+					/* Starting PWM channel */
+					TCCR2 |= gsau8_prescaler_2_LUT[gsau8_preScaler[channel]];
+				}
+				else
+				{
+					ERROR=E_NOK;
+ 978:	81 2f       	mov	r24, r17
+		default:
+				ERROR=E_NOK;
+				break;
+	}
+	return ERROR;
+}
+ 97a:	cf 91       	pop	r28
+ 97c:	1f 91       	pop	r17
+ 97e:	0f 91       	pop	r16
+ 980:	ff 90       	pop	r15
+ 982:	ef 90       	pop	r14
+ 984:	df 90       	pop	r13
+ 986:	cf 90       	pop	r12
+ 988:	08 95       	ret
+
+0000098a <softwareDelayMs>:
+
+#include "softwareDelay.h"
+
+/* this is the implementation of software delay function*/
+
+void softwareDelayMs(uint32_t u32_delay_in_ms){
+ 98a:	ab 01       	movw	r20, r22
+ 98c:	bc 01       	movw	r22, r24
+	
+	for (uint16_t counter=0;counter<u32_delay_in_ms;counter++){
+ 98e:	41 15       	cp	r20, r1
+ 990:	51 05       	cpc	r21, r1
+ 992:	61 05       	cpc	r22, r1
+ 994:	71 05       	cpc	r23, r1
+ 996:	71 f4       	brne	.+28     	; 0x9b4 <softwareDelayMs+0x2a>
+ 998:	08 95       	ret
+ 99a:	01 97       	sbiw	r24, 0x01	; 1
+		for(uint16_t internalcounter=0;internalcounter<1000;internalcounter++){
+ 99c:	f1 f7       	brne	.-4      	; 0x99a <softwareDelayMs+0x10>
+
+/* this is the implementation of software delay function*/
+
+void softwareDelayMs(uint32_t u32_delay_in_ms){
+	
+	for (uint16_t counter=0;counter<u32_delay_in_ms;counter++){
+ 99e:	2f 5f       	subi	r18, 0xFF	; 255
+ 9a0:	3f 4f       	sbci	r19, 0xFF	; 255
+ 9a2:	c9 01       	movw	r24, r18
+ 9a4:	a0 e0       	ldi	r26, 0x00	; 0
+ 9a6:	b0 e0       	ldi	r27, 0x00	; 0
+ 9a8:	84 17       	cp	r24, r20
+ 9aa:	95 07       	cpc	r25, r21
+ 9ac:	a6 07       	cpc	r26, r22
+ 9ae:	b7 07       	cpc	r27, r23
+ 9b0:	18 f0       	brcs	.+6      	; 0x9b8 <softwareDelayMs+0x2e>
+ 9b2:	08 95       	ret
+ 9b4:	20 e0       	ldi	r18, 0x00	; 0
+ 9b6:	30 e0       	ldi	r19, 0x00	; 0
+
+#include "softwareDelay.h"
+
+/* this is the implementation of software delay function*/
+
+void softwareDelayMs(uint32_t u32_delay_in_ms){
+ 9b8:	88 ee       	ldi	r24, 0xE8	; 232
+ 9ba:	93 e0       	ldi	r25, 0x03	; 3
+ 9bc:	ee cf       	rjmp	.-36     	; 0x99a <softwareDelayMs+0x10>
+
+000009be <Timer_Init>:
+		       ERROR=E_NOK;
+			   break;
+	}
+	
+	return ERROR;
+}
+ 9be:	fc 01       	movw	r30, r24
+ 9c0:	89 2b       	or	r24, r25
+ 9c2:	09 f4       	brne	.+2      	; 0x9c6 <Timer_Init+0x8>
+ 9c4:	54 c0       	rjmp	.+168    	; 0xa6e <Timer_Init+0xb0>
+ 9c6:	30 81       	ld	r19, Z
+ 9c8:	83 2f       	mov	r24, r19
+ 9ca:	90 e0       	ldi	r25, 0x00	; 0
+ 9cc:	dc 01       	movw	r26, r24
+ 9ce:	a2 57       	subi	r26, 0x72	; 114
+ 9d0:	bf 4f       	sbci	r27, 0xFF	; 255
+ 9d2:	23 81       	ldd	r18, Z+3	; 0x03
+ 9d4:	2c 93       	st	X, r18
+ 9d6:	21 81       	ldd	r18, Z+1	; 0x01
+ 9d8:	21 30       	cpi	r18, 0x01	; 1
+ 9da:	b1 f1       	breq	.+108    	; 0xa48 <Timer_Init+0x8a>
+ 9dc:	18 f0       	brcs	.+6      	; 0x9e4 <Timer_Init+0x26>
+ 9de:	22 30       	cpi	r18, 0x02	; 2
+ 9e0:	c9 f1       	breq	.+114    	; 0xa54 <Timer_Init+0x96>
+ 9e2:	3d c0       	rjmp	.+122    	; 0xa5e <Timer_Init+0xa0>
+ 9e4:	31 30       	cpi	r19, 0x01	; 1
+ 9e6:	81 f0       	breq	.+32     	; 0xa08 <Timer_Init+0x4a>
+ 9e8:	18 f0       	brcs	.+6      	; 0x9f0 <Timer_Init+0x32>
+ 9ea:	32 30       	cpi	r19, 0x02	; 2
+ 9ec:	e1 f0       	breq	.+56     	; 0xa26 <Timer_Init+0x68>
+ 9ee:	26 c0       	rjmp	.+76     	; 0xa3c <Timer_Init+0x7e>
+ 9f0:	83 b7       	in	r24, 0x33	; 51
+ 9f2:	87 7b       	andi	r24, 0xB7	; 183
+ 9f4:	83 bf       	out	0x33, r24	; 51
+ 9f6:	82 81       	ldd	r24, Z+2	; 0x02
+ 9f8:	81 30       	cpi	r24, 0x01	; 1
+ 9fa:	19 f4       	brne	.+6      	; 0xa02 <Timer_Init+0x44>
+ 9fc:	89 b7       	in	r24, 0x39	; 57
+ 9fe:	89 bf       	out	0x39, r24	; 57
+ a00:	1d c0       	rjmp	.+58     	; 0xa3c <Timer_Init+0x7e>
+ a02:	89 b7       	in	r24, 0x39	; 57
+ a04:	89 bf       	out	0x39, r24	; 57
+ a06:	1a c0       	rjmp	.+52     	; 0xa3c <Timer_Init+0x7e>
+ a08:	8f b5       	in	r24, 0x2f	; 47
+ a0a:	8c 7f       	andi	r24, 0xFC	; 252
+ a0c:	8f bd       	out	0x2f, r24	; 47
+ a0e:	8e b5       	in	r24, 0x2e	; 46
+ a10:	87 7e       	andi	r24, 0xE7	; 231
+ a12:	8e bd       	out	0x2e, r24	; 46
+ a14:	82 81       	ldd	r24, Z+2	; 0x02
+ a16:	81 11       	cpse	r24, r1
+ a18:	03 c0       	rjmp	.+6      	; 0xa20 <Timer_Init+0x62>
+ a1a:	89 b7       	in	r24, 0x39	; 57
+ a1c:	89 bf       	out	0x39, r24	; 57
+ a1e:	0e c0       	rjmp	.+28     	; 0xa3c <Timer_Init+0x7e>
+ a20:	89 b7       	in	r24, 0x39	; 57
+ a22:	89 bf       	out	0x39, r24	; 57
+ a24:	0b c0       	rjmp	.+22     	; 0xa3c <Timer_Init+0x7e>
+ a26:	85 b5       	in	r24, 0x25	; 37
+ a28:	87 7b       	andi	r24, 0xB7	; 183
+ a2a:	85 bd       	out	0x25, r24	; 37
+ a2c:	82 81       	ldd	r24, Z+2	; 0x02
+ a2e:	81 11       	cpse	r24, r1
+ a30:	03 c0       	rjmp	.+6      	; 0xa38 <Timer_Init+0x7a>
+ a32:	89 b7       	in	r24, 0x39	; 57
+ a34:	89 bf       	out	0x39, r24	; 57
+ a36:	02 c0       	rjmp	.+4      	; 0xa3c <Timer_Init+0x7e>
+ a38:	89 b7       	in	r24, 0x39	; 57
+ a3a:	89 bf       	out	0x39, r24	; 57
+ a3c:	a0 81       	ld	r26, Z
+ a3e:	b0 e0       	ldi	r27, 0x00	; 0
+ a40:	af 56       	subi	r26, 0x6F	; 111
+ a42:	bf 4f       	sbci	r27, 0xFF	; 255
+ a44:	1c 92       	st	X, r1
+ a46:	0b c0       	rjmp	.+22     	; 0xa5e <Timer_Init+0xa0>
+ a48:	dc 01       	movw	r26, r24
+ a4a:	af 56       	subi	r26, 0x6F	; 111
+ a4c:	bf 4f       	sbci	r27, 0xFF	; 255
+ a4e:	21 e0       	ldi	r18, 0x01	; 1
+ a50:	2c 93       	st	X, r18
+ a52:	05 c0       	rjmp	.+10     	; 0xa5e <Timer_Init+0xa0>
+ a54:	dc 01       	movw	r26, r24
+ a56:	af 56       	subi	r26, 0x6F	; 111
+ a58:	bf 4f       	sbci	r27, 0xFF	; 255
+ a5a:	22 e0       	ldi	r18, 0x02	; 2
+ a5c:	2c 93       	st	X, r18
+ a5e:	e0 81       	ld	r30, Z
+ a60:	f0 e0       	ldi	r31, 0x00	; 0
+ a62:	e5 57       	subi	r30, 0x75	; 117
+ a64:	ff 4f       	sbci	r31, 0xFF	; 255
+ a66:	81 e0       	ldi	r24, 0x01	; 1
+ a68:	80 83       	st	Z, r24
+ a6a:	80 e0       	ldi	r24, 0x00	; 0
+ a6c:	08 95       	ret
+ a6e:	81 e0       	ldi	r24, 0x01	; 1
+ a70:	08 95       	ret
+
+00000a72 <Timer_Start>:
+ a72:	81 30       	cpi	r24, 0x01	; 1
+ a74:	09 f4       	brne	.+2      	; 0xa78 <Timer_Start+0x6>
+ a76:	57 c0       	rjmp	.+174    	; 0xb26 <Timer_Start+0xb4>
+ a78:	20 f0       	brcs	.+8      	; 0xa82 <Timer_Start+0x10>
+ a7a:	82 30       	cpi	r24, 0x02	; 2
+ a7c:	09 f4       	brne	.+2      	; 0xa80 <Timer_Start+0xe>
+ a7e:	a8 c0       	rjmp	.+336    	; 0xbd0 <Timer_Start+0x15e>
+ a80:	f9 c0       	rjmp	.+498    	; 0xc74 <Timer_Start+0x202>
+ a82:	80 91 8b 00 	lds	r24, 0x008B	; 0x80008b <gsau8_initState>
+ a86:	81 30       	cpi	r24, 0x01	; 1
+ a88:	09 f0       	breq	.+2      	; 0xa8c <Timer_Start+0x1a>
+ a8a:	f6 c0       	rjmp	.+492    	; 0xc78 <Timer_Start+0x206>
+ a8c:	62 bf       	out	0x32, r22	; 50
+ a8e:	80 91 91 00 	lds	r24, 0x0091	; 0x800091 <gsau8_mode>
+ a92:	81 30       	cpi	r24, 0x01	; 1
+ a94:	d9 f1       	breq	.+118    	; 0xb0c <Timer_Start+0x9a>
+ a96:	18 f0       	brcs	.+6      	; 0xa9e <Timer_Start+0x2c>
+ a98:	82 30       	cpi	r24, 0x02	; 2
+ a9a:	e9 f1       	breq	.+122    	; 0xb16 <Timer_Start+0xa4>
+ a9c:	ef c0       	rjmp	.+478    	; 0xc7c <Timer_Start+0x20a>
+ a9e:	80 91 8e 00 	lds	r24, 0x008E	; 0x80008e <gsau8_preScaler>
+ aa2:	84 30       	cpi	r24, 0x04	; 4
+ aa4:	d9 f0       	breq	.+54     	; 0xadc <Timer_Start+0x6a>
+ aa6:	28 f4       	brcc	.+10     	; 0xab2 <Timer_Start+0x40>
+ aa8:	81 30       	cpi	r24, 0x01	; 1
+ aaa:	41 f0       	breq	.+16     	; 0xabc <Timer_Start+0x4a>
+ aac:	82 30       	cpi	r24, 0x02	; 2
+ aae:	71 f0       	breq	.+28     	; 0xacc <Timer_Start+0x5a>
+ ab0:	e7 c0       	rjmp	.+462    	; 0xc80 <Timer_Start+0x20e>
+ ab2:	86 30       	cpi	r24, 0x06	; 6
+ ab4:	d9 f0       	breq	.+54     	; 0xaec <Timer_Start+0x7a>
+ ab6:	87 30       	cpi	r24, 0x07	; 7
+ ab8:	09 f1       	breq	.+66     	; 0xafc <Timer_Start+0x8a>
+ aba:	e2 c0       	rjmp	.+452    	; 0xc80 <Timer_Start+0x20e>
+ abc:	83 b7       	in	r24, 0x33	; 51
+ abe:	89 7f       	andi	r24, 0xF9	; 249
+ ac0:	83 bf       	out	0x33, r24	; 51
+ ac2:	83 b7       	in	r24, 0x33	; 51
+ ac4:	81 60       	ori	r24, 0x01	; 1
+ ac6:	83 bf       	out	0x33, r24	; 51
+ ac8:	80 e0       	ldi	r24, 0x00	; 0
+ aca:	08 95       	ret
+ acc:	83 b7       	in	r24, 0x33	; 51
+ ace:	8a 7f       	andi	r24, 0xFA	; 250
+ ad0:	83 bf       	out	0x33, r24	; 51
+ ad2:	83 b7       	in	r24, 0x33	; 51
+ ad4:	82 60       	ori	r24, 0x02	; 2
+ ad6:	83 bf       	out	0x33, r24	; 51
+ ad8:	80 e0       	ldi	r24, 0x00	; 0
+ ada:	08 95       	ret
+ adc:	83 b7       	in	r24, 0x33	; 51
+ ade:	8b 7f       	andi	r24, 0xFB	; 251
+ ae0:	83 bf       	out	0x33, r24	; 51
+ ae2:	83 b7       	in	r24, 0x33	; 51
+ ae4:	83 60       	ori	r24, 0x03	; 3
+ ae6:	83 bf       	out	0x33, r24	; 51
+ ae8:	80 e0       	ldi	r24, 0x00	; 0
+ aea:	08 95       	ret
+ aec:	83 b7       	in	r24, 0x33	; 51
+ aee:	8c 7f       	andi	r24, 0xFC	; 252
+ af0:	83 bf       	out	0x33, r24	; 51
+ af2:	83 b7       	in	r24, 0x33	; 51
+ af4:	84 60       	ori	r24, 0x04	; 4
+ af6:	83 bf       	out	0x33, r24	; 51
+ af8:	80 e0       	ldi	r24, 0x00	; 0
+ afa:	08 95       	ret
+ afc:	83 b7       	in	r24, 0x33	; 51
+ afe:	8d 7f       	andi	r24, 0xFD	; 253
+ b00:	83 bf       	out	0x33, r24	; 51
+ b02:	83 b7       	in	r24, 0x33	; 51
+ b04:	85 60       	ori	r24, 0x05	; 5
+ b06:	83 bf       	out	0x33, r24	; 51
+ b08:	80 e0       	ldi	r24, 0x00	; 0
+ b0a:	08 95       	ret
+ b0c:	83 b7       	in	r24, 0x33	; 51
+ b0e:	87 60       	ori	r24, 0x07	; 7
+ b10:	83 bf       	out	0x33, r24	; 51
+ b12:	80 e0       	ldi	r24, 0x00	; 0
+ b14:	08 95       	ret
+ b16:	83 b7       	in	r24, 0x33	; 51
+ b18:	86 60       	ori	r24, 0x06	; 6
+ b1a:	83 bf       	out	0x33, r24	; 51
+ b1c:	83 b7       	in	r24, 0x33	; 51
+ b1e:	8e 7f       	andi	r24, 0xFE	; 254
+ b20:	83 bf       	out	0x33, r24	; 51
+ b22:	80 e0       	ldi	r24, 0x00	; 0
+ b24:	08 95       	ret
+ b26:	80 91 8c 00 	lds	r24, 0x008C	; 0x80008c <gsau8_initState+0x1>
+ b2a:	81 30       	cpi	r24, 0x01	; 1
+ b2c:	09 f0       	breq	.+2      	; 0xb30 <Timer_Start+0xbe>
+ b2e:	aa c0       	rjmp	.+340    	; 0xc84 <Timer_Start+0x212>
+ b30:	60 95       	com	r22
+ b32:	70 95       	com	r23
+ b34:	7d bd       	out	0x2d, r23	; 45
+ b36:	6c bd       	out	0x2c, r22	; 44
+ b38:	80 91 92 00 	lds	r24, 0x0092	; 0x800092 <gsau8_mode+0x1>
+ b3c:	81 30       	cpi	r24, 0x01	; 1
+ b3e:	d9 f1       	breq	.+118    	; 0xbb6 <Timer_Start+0x144>
+ b40:	18 f0       	brcs	.+6      	; 0xb48 <Timer_Start+0xd6>
+ b42:	82 30       	cpi	r24, 0x02	; 2
+ b44:	e9 f1       	breq	.+122    	; 0xbc0 <Timer_Start+0x14e>
+ b46:	a0 c0       	rjmp	.+320    	; 0xc88 <Timer_Start+0x216>
+ b48:	80 91 8f 00 	lds	r24, 0x008F	; 0x80008f <gsau8_preScaler+0x1>
+ b4c:	84 30       	cpi	r24, 0x04	; 4
+ b4e:	d9 f0       	breq	.+54     	; 0xb86 <Timer_Start+0x114>
+ b50:	28 f4       	brcc	.+10     	; 0xb5c <Timer_Start+0xea>
+ b52:	81 30       	cpi	r24, 0x01	; 1
+ b54:	41 f0       	breq	.+16     	; 0xb66 <Timer_Start+0xf4>
+ b56:	82 30       	cpi	r24, 0x02	; 2
+ b58:	71 f0       	breq	.+28     	; 0xb76 <Timer_Start+0x104>
+ b5a:	98 c0       	rjmp	.+304    	; 0xc8c <Timer_Start+0x21a>
+ b5c:	86 30       	cpi	r24, 0x06	; 6
+ b5e:	d9 f0       	breq	.+54     	; 0xb96 <Timer_Start+0x124>
+ b60:	87 30       	cpi	r24, 0x07	; 7
+ b62:	09 f1       	breq	.+66     	; 0xba6 <Timer_Start+0x134>
+ b64:	93 c0       	rjmp	.+294    	; 0xc8c <Timer_Start+0x21a>
+ b66:	8e b5       	in	r24, 0x2e	; 46
+ b68:	89 7f       	andi	r24, 0xF9	; 249
+ b6a:	8e bd       	out	0x2e, r24	; 46
+ b6c:	8e b5       	in	r24, 0x2e	; 46
+ b6e:	81 60       	ori	r24, 0x01	; 1
+ b70:	8e bd       	out	0x2e, r24	; 46
+ b72:	80 e0       	ldi	r24, 0x00	; 0
+ b74:	08 95       	ret
+ b76:	8e b5       	in	r24, 0x2e	; 46
+ b78:	8a 7f       	andi	r24, 0xFA	; 250
+ b7a:	8e bd       	out	0x2e, r24	; 46
+ b7c:	8e b5       	in	r24, 0x2e	; 46
+ b7e:	82 60       	ori	r24, 0x02	; 2
+ b80:	8e bd       	out	0x2e, r24	; 46
+ b82:	80 e0       	ldi	r24, 0x00	; 0
+ b84:	08 95       	ret
+ b86:	8e b5       	in	r24, 0x2e	; 46
+ b88:	8b 7f       	andi	r24, 0xFB	; 251
+ b8a:	8e bd       	out	0x2e, r24	; 46
+ b8c:	8e b5       	in	r24, 0x2e	; 46
+ b8e:	83 60       	ori	r24, 0x03	; 3
+ b90:	8e bd       	out	0x2e, r24	; 46
+ b92:	80 e0       	ldi	r24, 0x00	; 0
+ b94:	08 95       	ret
+ b96:	8e b5       	in	r24, 0x2e	; 46
+ b98:	8c 7f       	andi	r24, 0xFC	; 252
+ b9a:	8e bd       	out	0x2e, r24	; 46
+ b9c:	8e b5       	in	r24, 0x2e	; 46
+ b9e:	84 60       	ori	r24, 0x04	; 4
+ ba0:	8e bd       	out	0x2e, r24	; 46
+ ba2:	80 e0       	ldi	r24, 0x00	; 0
+ ba4:	08 95       	ret
+ ba6:	8e b5       	in	r24, 0x2e	; 46
+ ba8:	8d 7f       	andi	r24, 0xFD	; 253
+ baa:	8e bd       	out	0x2e, r24	; 46
+ bac:	8e b5       	in	r24, 0x2e	; 46
+ bae:	85 60       	ori	r24, 0x05	; 5
+ bb0:	8e bd       	out	0x2e, r24	; 46
+ bb2:	80 e0       	ldi	r24, 0x00	; 0
+ bb4:	08 95       	ret
+ bb6:	8e b5       	in	r24, 0x2e	; 46
+ bb8:	87 60       	ori	r24, 0x07	; 7
+ bba:	8e bd       	out	0x2e, r24	; 46
+ bbc:	80 e0       	ldi	r24, 0x00	; 0
+ bbe:	08 95       	ret
+ bc0:	8e b5       	in	r24, 0x2e	; 46
+ bc2:	86 60       	ori	r24, 0x06	; 6
+ bc4:	8e bd       	out	0x2e, r24	; 46
+ bc6:	8e b5       	in	r24, 0x2e	; 46
+ bc8:	8e 7f       	andi	r24, 0xFE	; 254
+ bca:	8e bd       	out	0x2e, r24	; 46
+ bcc:	80 e0       	ldi	r24, 0x00	; 0
+ bce:	08 95       	ret
+ bd0:	80 91 8d 00 	lds	r24, 0x008D	; 0x80008d <gsau8_initState+0x2>
+ bd4:	81 30       	cpi	r24, 0x01	; 1
+ bd6:	09 f0       	breq	.+2      	; 0xbda <Timer_Start+0x168>
+ bd8:	5b c0       	rjmp	.+182    	; 0xc90 <Timer_Start+0x21e>
+ bda:	60 95       	com	r22
+ bdc:	64 bd       	out	0x24, r22	; 36
+ bde:	80 91 93 00 	lds	r24, 0x0093	; 0x800093 <gsau8_mode+0x2>
+ be2:	88 23       	and	r24, r24
+ be4:	29 f0       	breq	.+10     	; 0xbf0 <Timer_Start+0x17e>
+ be6:	83 30       	cpi	r24, 0x03	; 3
+ be8:	08 f4       	brcc	.+2      	; 0xbec <Timer_Start+0x17a>
+ bea:	54 c0       	rjmp	.+168    	; 0xc94 <Timer_Start+0x222>
+ bec:	81 e0       	ldi	r24, 0x01	; 1
+ bee:	08 95       	ret
+ bf0:	e0 91 90 00 	lds	r30, 0x0090	; 0x800090 <gsau8_preScaler+0x2>
+ bf4:	8e 2f       	mov	r24, r30
+ bf6:	90 e0       	ldi	r25, 0x00	; 0
+ bf8:	fc 01       	movw	r30, r24
+ bfa:	31 97       	sbiw	r30, 0x01	; 1
+ bfc:	e7 30       	cpi	r30, 0x07	; 7
+ bfe:	f1 05       	cpc	r31, r1
+ c00:	08 f0       	brcs	.+2      	; 0xc04 <Timer_Start+0x192>
+ c02:	4a c0       	rjmp	.+148    	; 0xc98 <Timer_Start+0x226>
+ c04:	e6 5d       	subi	r30, 0xD6	; 214
+ c06:	ff 4f       	sbci	r31, 0xFF	; 255
+ c08:	6a c1       	rjmp	.+724    	; 0xede <__tablejump2__>
+ c0a:	85 b5       	in	r24, 0x25	; 37
+ c0c:	89 7f       	andi	r24, 0xF9	; 249
+ c0e:	85 bd       	out	0x25, r24	; 37
+ c10:	85 b5       	in	r24, 0x25	; 37
+ c12:	81 60       	ori	r24, 0x01	; 1
+ c14:	85 bd       	out	0x25, r24	; 37
+ c16:	80 e0       	ldi	r24, 0x00	; 0
+ c18:	08 95       	ret
+ c1a:	85 b5       	in	r24, 0x25	; 37
+ c1c:	8a 7f       	andi	r24, 0xFA	; 250
+ c1e:	85 bd       	out	0x25, r24	; 37
+ c20:	85 b5       	in	r24, 0x25	; 37
+ c22:	82 60       	ori	r24, 0x02	; 2
+ c24:	85 bd       	out	0x25, r24	; 37
+ c26:	80 e0       	ldi	r24, 0x00	; 0
+ c28:	08 95       	ret
+ c2a:	85 b5       	in	r24, 0x25	; 37
+ c2c:	8b 7f       	andi	r24, 0xFB	; 251
+ c2e:	85 bd       	out	0x25, r24	; 37
+ c30:	85 b5       	in	r24, 0x25	; 37
+ c32:	83 60       	ori	r24, 0x03	; 3
+ c34:	85 bd       	out	0x25, r24	; 37
+ c36:	80 e0       	ldi	r24, 0x00	; 0
+ c38:	08 95       	ret
+ c3a:	85 b5       	in	r24, 0x25	; 37
+ c3c:	8c 7f       	andi	r24, 0xFC	; 252
+ c3e:	85 bd       	out	0x25, r24	; 37
+ c40:	85 b5       	in	r24, 0x25	; 37
+ c42:	84 60       	ori	r24, 0x04	; 4
+ c44:	85 bd       	out	0x25, r24	; 37
+ c46:	80 e0       	ldi	r24, 0x00	; 0
+ c48:	08 95       	ret
+ c4a:	85 b5       	in	r24, 0x25	; 37
+ c4c:	8d 7f       	andi	r24, 0xFD	; 253
+ c4e:	85 bd       	out	0x25, r24	; 37
+ c50:	85 b5       	in	r24, 0x25	; 37
+ c52:	85 60       	ori	r24, 0x05	; 5
+ c54:	85 bd       	out	0x25, r24	; 37
+ c56:	80 e0       	ldi	r24, 0x00	; 0
+ c58:	08 95       	ret
+ c5a:	85 b5       	in	r24, 0x25	; 37
+ c5c:	8e 7f       	andi	r24, 0xFE	; 254
+ c5e:	85 bd       	out	0x25, r24	; 37
+ c60:	85 b5       	in	r24, 0x25	; 37
+ c62:	86 60       	ori	r24, 0x06	; 6
+ c64:	85 bd       	out	0x25, r24	; 37
+ c66:	80 e0       	ldi	r24, 0x00	; 0
+ c68:	08 95       	ret
+ c6a:	85 b5       	in	r24, 0x25	; 37
+ c6c:	87 60       	ori	r24, 0x07	; 7
+ c6e:	85 bd       	out	0x25, r24	; 37
+ c70:	80 e0       	ldi	r24, 0x00	; 0
+ c72:	08 95       	ret
+ c74:	81 e0       	ldi	r24, 0x01	; 1
+ c76:	08 95       	ret
+ c78:	81 e0       	ldi	r24, 0x01	; 1
+ c7a:	08 95       	ret
+ c7c:	81 e0       	ldi	r24, 0x01	; 1
+ c7e:	08 95       	ret
+ c80:	81 e0       	ldi	r24, 0x01	; 1
+ c82:	08 95       	ret
+ c84:	81 e0       	ldi	r24, 0x01	; 1
+ c86:	08 95       	ret
+ c88:	81 e0       	ldi	r24, 0x01	; 1
+ c8a:	08 95       	ret
+ c8c:	81 e0       	ldi	r24, 0x01	; 1
+ c8e:	08 95       	ret
+ c90:	81 e0       	ldi	r24, 0x01	; 1
+ c92:	08 95       	ret
+ c94:	80 e0       	ldi	r24, 0x00	; 0
+ c96:	08 95       	ret
+ c98:	81 e0       	ldi	r24, 0x01	; 1
+ c9a:	08 95       	ret
+
+00000c9c <Timer_Stop>:
+ c9c:	81 30       	cpi	r24, 0x01	; 1
+ c9e:	69 f0       	breq	.+26     	; 0xcba <Timer_Stop+0x1e>
+ ca0:	18 f0       	brcs	.+6      	; 0xca8 <Timer_Stop+0xc>
+ ca2:	82 30       	cpi	r24, 0x02	; 2
+ ca4:	99 f0       	breq	.+38     	; 0xccc <Timer_Stop+0x30>
+ ca6:	1b c0       	rjmp	.+54     	; 0xcde <Timer_Stop+0x42>
+ ca8:	80 91 8b 00 	lds	r24, 0x008B	; 0x80008b <gsau8_initState>
+ cac:	81 30       	cpi	r24, 0x01	; 1
+ cae:	c9 f4       	brne	.+50     	; 0xce2 <Timer_Stop+0x46>
+ cb0:	83 b7       	in	r24, 0x33	; 51
+ cb2:	88 7f       	andi	r24, 0xF8	; 248
+ cb4:	83 bf       	out	0x33, r24	; 51
+ cb6:	80 e0       	ldi	r24, 0x00	; 0
+ cb8:	08 95       	ret
+ cba:	80 91 8c 00 	lds	r24, 0x008C	; 0x80008c <gsau8_initState+0x1>
+ cbe:	81 30       	cpi	r24, 0x01	; 1
+ cc0:	91 f4       	brne	.+36     	; 0xce6 <Timer_Stop+0x4a>
+ cc2:	8e b5       	in	r24, 0x2e	; 46
+ cc4:	88 7f       	andi	r24, 0xF8	; 248
+ cc6:	8e bd       	out	0x2e, r24	; 46
+ cc8:	80 e0       	ldi	r24, 0x00	; 0
+ cca:	08 95       	ret
+ ccc:	80 91 8d 00 	lds	r24, 0x008D	; 0x80008d <gsau8_initState+0x2>
+ cd0:	81 30       	cpi	r24, 0x01	; 1
+ cd2:	59 f4       	brne	.+22     	; 0xcea <Timer_Stop+0x4e>
+ cd4:	85 b5       	in	r24, 0x25	; 37
+ cd6:	88 7f       	andi	r24, 0xF8	; 248
+ cd8:	85 bd       	out	0x25, r24	; 37
+ cda:	80 e0       	ldi	r24, 0x00	; 0
+ cdc:	08 95       	ret
+ cde:	81 e0       	ldi	r24, 0x01	; 1
+ ce0:	08 95       	ret
+ ce2:	81 e0       	ldi	r24, 0x01	; 1
+ ce4:	08 95       	ret
+ ce6:	81 e0       	ldi	r24, 0x01	; 1
+ ce8:	08 95       	ret
+ cea:	81 e0       	ldi	r24, 0x01	; 1
+ cec:	08 95       	ret
+
+00000cee <Timer_GetStatus>:
+ cee:	e8 2f       	mov	r30, r24
+ cf0:	f0 e0       	ldi	r31, 0x00	; 0
+ cf2:	e5 57       	subi	r30, 0x75	; 117
+ cf4:	ff 4f       	sbci	r31, 0xFF	; 255
+ cf6:	90 81       	ld	r25, Z
+ cf8:	91 30       	cpi	r25, 0x01	; 1
+ cfa:	e9 f4       	brne	.+58     	; 0xd36 <Timer_GetStatus+0x48>
+ cfc:	fb 01       	movw	r30, r22
+ cfe:	90 83       	st	Z, r25
+ d00:	81 30       	cpi	r24, 0x01	; 1
+ d02:	59 f0       	breq	.+22     	; 0xd1a <Timer_GetStatus+0x2c>
+ d04:	18 f0       	brcs	.+6      	; 0xd0c <Timer_GetStatus+0x1e>
+ d06:	82 30       	cpi	r24, 0x02	; 2
+ d08:	79 f0       	breq	.+30     	; 0xd28 <Timer_GetStatus+0x3a>
+ d0a:	17 c0       	rjmp	.+46     	; 0xd3a <Timer_GetStatus+0x4c>
+ d0c:	08 b6       	in	r0, 0x38	; 56
+ d0e:	00 fe       	sbrs	r0, 0
+ d10:	16 c0       	rjmp	.+44     	; 0xd3e <Timer_GetStatus+0x50>
+ d12:	fb 01       	movw	r30, r22
+ d14:	10 82       	st	Z, r1
+ d16:	80 e0       	ldi	r24, 0x00	; 0
+ d18:	08 95       	ret
+ d1a:	08 b6       	in	r0, 0x38	; 56
+ d1c:	02 fe       	sbrs	r0, 2
+ d1e:	11 c0       	rjmp	.+34     	; 0xd42 <Timer_GetStatus+0x54>
+ d20:	fb 01       	movw	r30, r22
+ d22:	10 82       	st	Z, r1
+ d24:	80 e0       	ldi	r24, 0x00	; 0
+ d26:	08 95       	ret
+ d28:	08 b6       	in	r0, 0x38	; 56
+ d2a:	06 fe       	sbrs	r0, 6
+ d2c:	0c c0       	rjmp	.+24     	; 0xd46 <Timer_GetStatus+0x58>
+ d2e:	fb 01       	movw	r30, r22
+ d30:	10 82       	st	Z, r1
+ d32:	80 e0       	ldi	r24, 0x00	; 0
+ d34:	08 95       	ret
+ d36:	81 e0       	ldi	r24, 0x01	; 1
+ d38:	08 95       	ret
+ d3a:	81 e0       	ldi	r24, 0x01	; 1
+ d3c:	08 95       	ret
+ d3e:	80 e0       	ldi	r24, 0x00	; 0
+ d40:	08 95       	ret
+ d42:	80 e0       	ldi	r24, 0x00	; 0
+ d44:	08 95       	ret
+ d46:	80 e0       	ldi	r24, 0x00	; 0
+ d48:	08 95       	ret
+
+00000d4a <__vector_11>:
+ISR(TIMER0_OVF_vect)
+{
+ d4a:	1f 92       	push	r1
+ d4c:	0f 92       	push	r0
+ d4e:	0f b6       	in	r0, 0x3f	; 63
+ d50:	0f 92       	push	r0
+ d52:	11 24       	eor	r1, r1
+ d54:	8f 93       	push	r24
+ d56:	9f 93       	push	r25
+ d58:	af 93       	push	r26
+ d5a:	bf 93       	push	r27
+	gu_timer_count1++;
+ d5c:	80 91 94 00 	lds	r24, 0x0094	; 0x800094 <gu_timer_count1>
+ d60:	90 91 95 00 	lds	r25, 0x0095	; 0x800095 <gu_timer_count1+0x1>
+ d64:	a0 91 96 00 	lds	r26, 0x0096	; 0x800096 <gu_timer_count1+0x2>
+ d68:	b0 91 97 00 	lds	r27, 0x0097	; 0x800097 <gu_timer_count1+0x3>
+ d6c:	01 96       	adiw	r24, 0x01	; 1
+ d6e:	a1 1d       	adc	r26, r1
+ d70:	b1 1d       	adc	r27, r1
+ d72:	80 93 94 00 	sts	0x0094, r24	; 0x800094 <gu_timer_count1>
+ d76:	90 93 95 00 	sts	0x0095, r25	; 0x800095 <gu_timer_count1+0x1>
+ d7a:	a0 93 96 00 	sts	0x0096, r26	; 0x800096 <gu_timer_count1+0x2>
+ d7e:	b0 93 97 00 	sts	0x0097, r27	; 0x800097 <gu_timer_count1+0x3>
+}
+ d82:	bf 91       	pop	r27
+ d84:	af 91       	pop	r26
+ d86:	9f 91       	pop	r25
+ d88:	8f 91       	pop	r24
+ d8a:	0f 90       	pop	r0
+ d8c:	0f be       	out	0x3f, r0	; 63
+ d8e:	0f 90       	pop	r0
+ d90:	1f 90       	pop	r1
+ d92:	18 95       	reti
+
+00000d94 <Us_Init>:
+ *                                                                                                  *
+ *                                                                                                  *
+ ***************************************************************************************************/
+
+ERROR_STATUS Us_Init(void)
+{
+ d94:	cf 93       	push	r28
+ d96:	df 93       	push	r29
+ d98:	00 d0       	rcall	.+0      	; 0xd9a <Us_Init+0x6>
+ d9a:	00 d0       	rcall	.+0      	; 0xd9c <Us_Init+0x8>
+ d9c:	1f 92       	push	r1
+ d9e:	cd b7       	in	r28, 0x3d	; 61
+ da0:	de b7       	in	r29, 0x3e	; 62
+	ERROR_STATUS ERROR=E_OK;
+   DIO_Cfg_s u8_instance={GPIOB,BIT3,OUTPUT};
+ da2:	81 e0       	ldi	r24, 0x01	; 1
+ da4:	89 83       	std	Y+1, r24	; 0x01
+ da6:	88 e0       	ldi	r24, 0x08	; 8
+ da8:	8a 83       	std	Y+2, r24	; 0x02
+ daa:	8f ef       	ldi	r24, 0xFF	; 255
+ dac:	8b 83       	std	Y+3, r24	; 0x03
+	DIO_init(&u8_instance);
+ dae:	ce 01       	movw	r24, r28
+ db0:	01 96       	adiw	r24, 0x01	; 1
+ db2:	a6 d9       	rcall	.-3252   	; 0x100 <DIO_init>
+   u8_instance.pins=BIT2;
+ db4:	84 e0       	ldi	r24, 0x04	; 4
+ db6:	8a 83       	std	Y+2, r24	; 0x02
+   u8_instance.dir=INPUT;
+ db8:	1b 82       	std	Y+3, r1	; 0x03
+	 DIO_init(&u8_instance);
+ dba:	ce 01       	movw	r24, r28
+ dbc:	01 96       	adiw	r24, 0x01	; 1
+ dbe:	a0 d9       	rcall	.-3264   	; 0x100 <DIO_init>
+	Icu_cfg_s US_INST_CFG={ICU_CH2,ICU_TIMER_CH0};
+ dc0:	82 e0       	ldi	r24, 0x02	; 2
+ dc2:	8c 83       	std	Y+4, r24	; 0x04
+ dc4:	1d 82       	std	Y+5, r1	; 0x05
+	
+	if(Icu_Init(&US_INST_CFG)==E_OK)
+ dc6:	ce 01       	movw	r24, r28
+ dc8:	04 96       	adiw	r24, 0x04	; 4
+ dca:	6f db       	rcall	.-2338   	; 0x4aa <Icu_Init>
+	else
+	{
+		ERROR=E_NOK;
+	}
+
+	return ERROR;
+ dcc:	91 e0       	ldi	r25, 0x01	; 1
+ dce:	81 11       	cpse	r24, r1
+ dd0:	01 c0       	rjmp	.+2      	; 0xdd4 <Us_Init+0x40>
+ dd2:	90 e0       	ldi	r25, 0x00	; 0
+}
+ dd4:	89 2f       	mov	r24, r25
+ dd6:	0f 90       	pop	r0
+ dd8:	0f 90       	pop	r0
+ dda:	0f 90       	pop	r0
+ ddc:	0f 90       	pop	r0
+ dde:	0f 90       	pop	r0
+ de0:	df 91       	pop	r29
+ de2:	cf 91       	pop	r28
+ de4:	08 95       	ret
+
+00000de6 <Us_Trigger>:
+ * Return           : ERROR_STATUS                                                                *
+ * Description      : This function send the  pulse, to trigger pin of the UltraSonic to enhance  *
+ *                    the  ECUO signal                                                            *
+ *************************************************************************************************/
+ERROR_STATUS Us_Trigger(void)
+{ERROR_STATUS ERROR=E_OK;
+ de6:	cf 93       	push	r28
+ de8:	df 93       	push	r29
+	if(DIO_Write(GPIOB,BIT3,HIGH)==E_NOK)
+ dea:	4f ef       	ldi	r20, 0xFF	; 255
+ dec:	68 e0       	ldi	r22, 0x08	; 8
+ dee:	81 e0       	ldi	r24, 0x01	; 1
+ df0:	e8 d9       	rcall	.-3120   	; 0x1c2 <DIO_Write>
+ df2:	d8 2f       	mov	r29, r24
+	ERROR=E_NOK;
+softwareDelayMs(1);
+ df4:	61 e0       	ldi	r22, 0x01	; 1
+ df6:	70 e0       	ldi	r23, 0x00	; 0
+ df8:	80 e0       	ldi	r24, 0x00	; 0
+ dfa:	90 e0       	ldi	r25, 0x00	; 0
+ dfc:	c6 dd       	rcall	.-1140   	; 0x98a <softwareDelayMs>
+	if(DIO_Write(GPIOB,BIT3,LOW)==E_NOK)
+ dfe:	40 e0       	ldi	r20, 0x00	; 0
+ e00:	68 e0       	ldi	r22, 0x08	; 8
+ e02:	81 e0       	ldi	r24, 0x01	; 1
+ e04:	de d9       	rcall	.-3140   	; 0x1c2 <DIO_Write>
+ e06:	81 30       	cpi	r24, 0x01	; 1
+ e08:	29 f0       	breq	.+10     	; 0xe14 <Us_Trigger+0x2e>
+ * Return           : ERROR_STATUS                                                                *
+ * Description      : This function send the  pulse, to trigger pin of the UltraSonic to enhance  *
+ *                    the  ECUO signal                                                            *
+ *************************************************************************************************/
+ERROR_STATUS Us_Trigger(void)
+{ERROR_STATUS ERROR=E_OK;
+ e0a:	c1 e0       	ldi	r28, 0x01	; 1
+ e0c:	d1 30       	cpi	r29, 0x01	; 1
+ e0e:	19 f0       	breq	.+6      	; 0xe16 <Us_Trigger+0x30>
+ e10:	c0 e0       	ldi	r28, 0x00	; 0
+ e12:	01 c0       	rjmp	.+2      	; 0xe16 <Us_Trigger+0x30>
+	if(DIO_Write(GPIOB,BIT3,HIGH)==E_NOK)
+	ERROR=E_NOK;
+softwareDelayMs(1);
+	if(DIO_Write(GPIOB,BIT3,LOW)==E_NOK)
+	ERROR=E_NOK;
+ e14:	c1 e0       	ldi	r28, 0x01	; 1
+softwareDelayMs(1);	
+ e16:	61 e0       	ldi	r22, 0x01	; 1
+ e18:	70 e0       	ldi	r23, 0x00	; 0
+ e1a:	80 e0       	ldi	r24, 0x00	; 0
+ e1c:	90 e0       	ldi	r25, 0x00	; 0
+ e1e:	b5 dd       	rcall	.-1174   	; 0x98a <softwareDelayMs>
+	
+	return ERROR;
+}
+ e20:	8c 2f       	mov	r24, r28
+ e22:	df 91       	pop	r29
+ e24:	cf 91       	pop	r28
+ e26:	08 95       	ret
+
+00000e28 <Us_GetDistance>:
+ *                    Distance parameter.                                                         *
+ *************************************************************************************************/
+
+
+ERROR_STATUS Us_GetDistance(uint16_t *Distance)
+{ ERROR_STATUS ERROR=E_OK;
+ e28:	0f 93       	push	r16
+ e2a:	1f 93       	push	r17
+ e2c:	cf 93       	push	r28
+ e2e:	df 93       	push	r29
+ e30:	00 d0       	rcall	.+0      	; 0xe32 <Us_GetDistance+0xa>
+ e32:	00 d0       	rcall	.+0      	; 0xe34 <Us_GetDistance+0xc>
+ e34:	cd b7       	in	r28, 0x3d	; 61
+ e36:	de b7       	in	r29, 0x3e	; 62
+ e38:	8c 01       	movw	r16, r24
+	uint32_t TIME=0;
+ e3a:	19 82       	std	Y+1, r1	; 0x01
+ e3c:	1a 82       	std	Y+2, r1	; 0x02
+ e3e:	1b 82       	std	Y+3, r1	; 0x03
+ e40:	1c 82       	std	Y+4, r1	; 0x04
+	if(Icu_ReadTime(ICU_CH2,ICU_RISE_TO_FALL,&TIME)==E_NOK)
+ e42:	ae 01       	movw	r20, r28
+ e44:	4f 5f       	subi	r20, 0xFF	; 255
+ e46:	5f 4f       	sbci	r21, 0xFF	; 255
+ e48:	61 e0       	ldi	r22, 0x01	; 1
+ e4a:	82 e0       	ldi	r24, 0x02	; 2
+ e4c:	70 db       	rcall	.-2336   	; 0x52e <Icu_ReadTime>
+	ERROR=E_NOK;
+	
+*Distance=TIME;	
+ e4e:	29 81       	ldd	r18, Y+1	; 0x01
+ e50:	3a 81       	ldd	r19, Y+2	; 0x02
+ e52:	f8 01       	movw	r30, r16
+ e54:	31 83       	std	Z+1, r19	; 0x01
+ e56:	20 83       	st	Z, r18
+
+return ERROR;	
+ e58:	91 e0       	ldi	r25, 0x01	; 1
+ e5a:	81 30       	cpi	r24, 0x01	; 1
+ e5c:	09 f0       	breq	.+2      	; 0xe60 <Us_GetDistance+0x38>
+ e5e:	90 e0       	ldi	r25, 0x00	; 0
+}
+ e60:	89 2f       	mov	r24, r25
+ e62:	0f 90       	pop	r0
+ e64:	0f 90       	pop	r0
+ e66:	0f 90       	pop	r0
+ e68:	0f 90       	pop	r0
+ e6a:	df 91       	pop	r29
+ e6c:	cf 91       	pop	r28
+ e6e:	1f 91       	pop	r17
+ e70:	0f 91       	pop	r16
+ e72:	08 95       	ret
+
+00000e74 <__divmodhi4>:
+ e74:	97 fb       	bst	r25, 7
+ e76:	07 2e       	mov	r0, r23
+ e78:	16 f4       	brtc	.+4      	; 0xe7e <__divmodhi4+0xa>
+ e7a:	00 94       	com	r0
+ e7c:	06 d0       	rcall	.+12     	; 0xe8a <__divmodhi4_neg1>
+ e7e:	77 fd       	sbrc	r23, 7
+ e80:	08 d0       	rcall	.+16     	; 0xe92 <__divmodhi4_neg2>
+ e82:	4c d0       	rcall	.+152    	; 0xf1c <__udivmodhi4>
+ e84:	07 fc       	sbrc	r0, 7
+ e86:	05 d0       	rcall	.+10     	; 0xe92 <__divmodhi4_neg2>
+ e88:	3e f4       	brtc	.+14     	; 0xe98 <__divmodhi4_exit>
+
+00000e8a <__divmodhi4_neg1>:
+ e8a:	90 95       	com	r25
+ e8c:	81 95       	neg	r24
+ e8e:	9f 4f       	sbci	r25, 0xFF	; 255
+ e90:	08 95       	ret
+
+00000e92 <__divmodhi4_neg2>:
+ e92:	70 95       	com	r23
+ e94:	61 95       	neg	r22
+ e96:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00000e98 <__divmodhi4_exit>:
+ e98:	08 95       	ret
+
+00000e9a <__udivmodsi4>:
+ e9a:	a1 e2       	ldi	r26, 0x21	; 33
+ e9c:	1a 2e       	mov	r1, r26
+ e9e:	aa 1b       	sub	r26, r26
+ ea0:	bb 1b       	sub	r27, r27
+ ea2:	fd 01       	movw	r30, r26
+ ea4:	0d c0       	rjmp	.+26     	; 0xec0 <__udivmodsi4_ep>
+
+00000ea6 <__udivmodsi4_loop>:
+ ea6:	aa 1f       	adc	r26, r26
+ ea8:	bb 1f       	adc	r27, r27
+ eaa:	ee 1f       	adc	r30, r30
+ eac:	ff 1f       	adc	r31, r31
+ eae:	a2 17       	cp	r26, r18
+ eb0:	b3 07       	cpc	r27, r19
+ eb2:	e4 07       	cpc	r30, r20
+ eb4:	f5 07       	cpc	r31, r21
+ eb6:	20 f0       	brcs	.+8      	; 0xec0 <__udivmodsi4_ep>
+ eb8:	a2 1b       	sub	r26, r18
+ eba:	b3 0b       	sbc	r27, r19
+ ebc:	e4 0b       	sbc	r30, r20
+ ebe:	f5 0b       	sbc	r31, r21
+
+00000ec0 <__udivmodsi4_ep>:
+ ec0:	66 1f       	adc	r22, r22
+ ec2:	77 1f       	adc	r23, r23
+ ec4:	88 1f       	adc	r24, r24
+ ec6:	99 1f       	adc	r25, r25
+ ec8:	1a 94       	dec	r1
+ eca:	69 f7       	brne	.-38     	; 0xea6 <__udivmodsi4_loop>
+ ecc:	60 95       	com	r22
+ ece:	70 95       	com	r23
+ ed0:	80 95       	com	r24
+ ed2:	90 95       	com	r25
+ ed4:	9b 01       	movw	r18, r22
+ ed6:	ac 01       	movw	r20, r24
+ ed8:	bd 01       	movw	r22, r26
+ eda:	cf 01       	movw	r24, r30
+ edc:	08 95       	ret
+
+00000ede <__tablejump2__>:
+ ede:	ee 0f       	add	r30, r30
+ ee0:	ff 1f       	adc	r31, r31
+ ee2:	05 90       	lpm	r0, Z+
+ ee4:	f4 91       	lpm	r31, Z
+ ee6:	e0 2d       	mov	r30, r0
+ ee8:	09 94       	ijmp
+
+00000eea <__umulhisi3>:
+ eea:	a2 9f       	mul	r26, r18
+ eec:	b0 01       	movw	r22, r0
+ eee:	b3 9f       	mul	r27, r19
+ ef0:	c0 01       	movw	r24, r0
+ ef2:	a3 9f       	mul	r26, r19
+ ef4:	70 0d       	add	r23, r0
+ ef6:	81 1d       	adc	r24, r1
+ ef8:	11 24       	eor	r1, r1
+ efa:	91 1d       	adc	r25, r1
+ efc:	b2 9f       	mul	r27, r18
+ efe:	70 0d       	add	r23, r0
+ f00:	81 1d       	adc	r24, r1
+ f02:	11 24       	eor	r1, r1
+ f04:	91 1d       	adc	r25, r1
+ f06:	08 95       	ret
+
+00000f08 <__muluhisi3>:
+ f08:	f0 df       	rcall	.-32     	; 0xeea <__umulhisi3>
+ f0a:	a5 9f       	mul	r26, r21
+ f0c:	90 0d       	add	r25, r0
+ f0e:	b4 9f       	mul	r27, r20
+ f10:	90 0d       	add	r25, r0
+ f12:	a4 9f       	mul	r26, r20
+ f14:	80 0d       	add	r24, r0
+ f16:	91 1d       	adc	r25, r1
+ f18:	11 24       	eor	r1, r1
+ f1a:	08 95       	ret
+
+00000f1c <__udivmodhi4>:
+ f1c:	aa 1b       	sub	r26, r26
+ f1e:	bb 1b       	sub	r27, r27
+ f20:	51 e1       	ldi	r21, 0x11	; 17
+ f22:	07 c0       	rjmp	.+14     	; 0xf32 <__udivmodhi4_ep>
+
+00000f24 <__udivmodhi4_loop>:
+ f24:	aa 1f       	adc	r26, r26
+ f26:	bb 1f       	adc	r27, r27
+ f28:	a6 17       	cp	r26, r22
+ f2a:	b7 07       	cpc	r27, r23
+ f2c:	10 f0       	brcs	.+4      	; 0xf32 <__udivmodhi4_ep>
+ f2e:	a6 1b       	sub	r26, r22
+ f30:	b7 0b       	sbc	r27, r23
+
+00000f32 <__udivmodhi4_ep>:
+ f32:	88 1f       	adc	r24, r24
+ f34:	99 1f       	adc	r25, r25
+ f36:	5a 95       	dec	r21
+ f38:	a9 f7       	brne	.-22     	; 0xf24 <__udivmodhi4_loop>
+ f3a:	80 95       	com	r24
+ f3c:	90 95       	com	r25
+ f3e:	bc 01       	movw	r22, r24
+ f40:	cd 01       	movw	r24, r26
+ f42:	08 95       	ret
+
+00000f44 <_exit>:
+ f44:	f8 94       	cli
+
+00000f46 <__stop_program>:
+ f46:	ff cf       	rjmp	.-2      	; 0xf46 <__stop_program>
